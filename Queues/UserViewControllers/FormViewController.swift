@@ -12,6 +12,13 @@ class FormViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        updateViews()
+    }
+
+
+
+    func updateViews() {
         guard let formID = formID else { return }
 
         networkController.getRestaurantInfo(for: formID) { (restaurant, error) in
@@ -23,30 +30,25 @@ class FormViewController: UIViewController {
             self.currentRestaurant = restaurant
             guard let currentRestaurant = self.currentRestaurant else { return }
             DispatchQueue.main.async {
-                self.restaurantLabel.text = currentRestaurant.name
-
+                self.restaurantNameLabel.text = currentRestaurant.name
+                self.restaurantPhoneLabel.text = currentRestaurant.phone
+                self.restaurantAddressLabel.text = currentRestaurant.address
+                self.restaurantTimesLabel.text = currentRestaurant.times
             }
         }
     }
 
-    @IBAction func buttonPressed(_ sender: Any) {
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var restaurantPhoneLabel: UILabel!
+    @IBOutlet weak var restaurantAddressLabel: UILabel!
+    @IBOutlet weak var restaurantTimesLabel: UILabel!
 
-        let form = Form(name: "Jon", phone: "7189094425", partySize: 5)
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var userPhoneTextField: UITextField!
+    @IBOutlet weak var userCelebrationTextField: UITextField!
+    @IBOutlet weak var userPartySizeTextField: UITextField!
+    @IBOutlet weak var userSeatingPicker: UIPickerView!
 
-        guard let formID = formID else { return }
-
-        networkController.fillForm(restaurantID: formID, form: form) { (error) in
-            if let error = error {
-                NSLog("Error filling form: \(error)")
-            }
-        }
-
-
-    }
-
-    
-
-    @IBOutlet weak var restaurantLabel: UILabel!
     var formID: String?
     let networkController = NetworkController()
     var currentRestaurant: Restaurant?
