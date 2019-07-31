@@ -14,6 +14,7 @@ class RestaurantController {
     private init() {}
 
     var restaurantID: String?
+    var currentRestaurant: Restaurant?
     var forms: [Form] = []
 
     
