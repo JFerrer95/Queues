@@ -17,6 +17,7 @@ class FormViewController: UIViewController {
         networkController.getRestaurantInfo(for: formID) { (restaurant, error) in
             if let error = error {
                 NSLog("error getting info: \(error)")
+                return
             }
 
             self.currentRestaurant = restaurant

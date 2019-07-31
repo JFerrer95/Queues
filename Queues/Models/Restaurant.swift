@@ -10,7 +10,7 @@ import Foundation
 
 class Restaurant: Codable {
 
-    var forms: [Form]
+    var forms: [Form]?
     let name: String
     var phone: String
     var times: String

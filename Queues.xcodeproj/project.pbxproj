@@ -21,6 +21,7 @@
 		D1E138FD22F1449D00116AD0 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */; };
 		D1E138FF22F144EA00116AD0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FE22F144EA00116AD0 /* User.storyboard */; };
 		D1E1390322F1497400116AD0 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390222F1497400116AD0 /* Form.swift */; };
+		D1E1390922F1569E00116AD0 /* FormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 		D1E138FE22F144EA00116AD0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		D1E1390222F1497400116AD0 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
+		D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,19 +74,12 @@
 		D18783E222EF80B5008C4180 /* Queues */ = {
 			isa = PBXGroup;
 			children = (
-				D18783E322EF80B5008C4180 /* AppDelegate.swift */,
+				D1E1390722F1530400116AD0 /* Resources */,
 				D1E1390022F147AB00116AD0 /* UserViewControllers */,
-				D1E138F622F117B500116AD0 /* NetworkController.swift */,
 				D1E1390122F147CE00116AD0 /* RestaurantViewControllers */,
-				D1E138F422F1122B00116AD0 /* Restaurant.swift */,
-				D1E1390222F1497400116AD0 /* Form.swift */,
-				D1E138FA22F126E500116AD0 /* RestaurantController.swift */,
-				D1E138EC22F0D96500116AD0 /* Images.xcassets */,
-				D18783E722EF80B5008C4180 /* Main.storyboard */,
-				D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */,
-				D1E138FE22F144EA00116AD0 /* User.storyboard */,
-				D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */,
-				D18783EF22EF80B7008C4180 /* Info.plist */,
+				D1E1390422F14EFF00116AD0 /* Models */,
+				D1E1390522F152D000116AD0 /* Model Controllers */,
+				D1E1390622F152E100116AD0 /* Storyboards */,
 			);
 			path = Queues;
 			sourceTree = "<group>";
@@ -103,8 +98,48 @@
 			children = (
 				D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */,
 				D1E138F822F1211B00116AD0 /* RestaurantSettingsViewController.swift */,
+				D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */,
 			);
 			path = RestaurantViewControllers;
+			sourceTree = "<group>";
+		};
+		D1E1390422F14EFF00116AD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D1E138F422F1122B00116AD0 /* Restaurant.swift */,
+				D1E1390222F1497400116AD0 /* Form.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D1E1390522F152D000116AD0 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D1E138FA22F126E500116AD0 /* RestaurantController.swift */,
+				D1E138F622F117B500116AD0 /* NetworkController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D1E1390622F152E100116AD0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D18783E722EF80B5008C4180 /* Main.storyboard */,
+				D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */,
+				D1E138FE22F144EA00116AD0 /* User.storyboard */,
+				D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D1E1390722F1530400116AD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D18783E322EF80B5008C4180 /* AppDelegate.swift */,
+				D1E138EC22F0D96500116AD0 /* Images.xcassets */,
+				D18783EF22EF80B7008C4180 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E138EF22F0DF0C00116AD0 /* FormViewController.swift in Sources */,
+				D1E1390922F1569E00116AD0 /* FormsTableViewController.swift in Sources */,
 				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,
 				D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */,
@@ -336,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2KHAE3YT5;
-				INFOPLIST_FILE = Queues/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Queues/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -355,7 +391,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F2KHAE3YT5;
-				INFOPLIST_FILE = Queues/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Queues/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

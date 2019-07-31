@@ -83,14 +83,40 @@ class NetworkController {
                 completion(restaurant, nil)
 
             } catch {
-                NSLog("Error decoding pokemon: \(error)")
+                NSLog("Error decoding restaurant: \(error)")
                 completion(nil, error)
             }
             }.resume()
     }
 
-    func getFormInfo(for formID: String, restaurantID: String, completion: @escaping (Form?,Error?) -> Void) {
-        
+    func getForms(restaurantID: String, completion: @escaping ([Form]?,Error?) -> Void) {
+        let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurantID).appendingPathComponent("Forms").appendingPathExtension("json")
+        var request = URLRequest(url: identifierURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+            if let error = error {
+                NSLog("Error fetching forms: \(error)")
+                completion(nil, error)
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned from dataTask")
+                completion(nil, error)
+                return
+            }
+
+            let decoder = JSONDecoder()
+            do {
+
+                let forms = try decoder.decode([Form].self, from: data)
+                completion(forms, nil)
+
+            } catch {
+                NSLog("Error decoding forms: \(error)")
+                completion(nil, error)
+            }
+            }.resume()
     }
 
 }

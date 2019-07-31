@@ -9,5 +9,14 @@
 import Foundation
 
 class RestaurantController {
+
+    static let shared = RestaurantController()
+    private init() {}
+
     var restaurantID: String?
+    var forms: [Form] = []
+
+    
+
+
 }
