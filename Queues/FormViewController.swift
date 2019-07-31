@@ -14,7 +14,7 @@ class FormViewController: UIViewController {
         super.viewDidLoad()
         guard let formID = formID else { return }
 
-        networkController.getInfo(for: formID) { (restaurant, error) in
+        networkController.getRestaurantInfo(for: formID) { (restaurant, error) in
             if let error = error {
                 NSLog("error getting info: \(error)")
             }

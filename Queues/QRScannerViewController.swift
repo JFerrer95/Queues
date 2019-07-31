@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class readerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
 
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class readerViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     }
 
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if metadataObjects != nil && metadataObjects.count != 0 {
+        if metadataObjects.count != 0 {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
                 if object.type == AVMetadataObject.ObjectType.qr {
                     formID = object.stringValue

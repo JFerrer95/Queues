@@ -59,7 +59,7 @@ class NetworkController {
             }.resume()
     }
 
-    func getInfo(for restaurantID: String, completion: @escaping (Restaurant?,Error?) -> Void) {
+    func getRestaurantInfo(for restaurantID: String, completion: @escaping (Restaurant?,Error?) -> Void) {
         let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurantID).appendingPathExtension("json")
         var request = URLRequest(url: identifierURL)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -87,6 +87,10 @@ class NetworkController {
                 completion(nil, error)
             }
             }.resume()
+    }
+
+    func getFormInfo(for formID: String, restaurantID: String, completion: @escaping (Form?,Error?) -> Void) {
+        
     }
 
 }

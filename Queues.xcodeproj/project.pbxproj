@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D18783E422EF80B5008C4180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E322EF80B5008C4180 /* AppDelegate.swift */; };
-		D18783E622EF80B5008C4180 /* readerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E522EF80B5008C4180 /* readerViewController.swift */; };
+		D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E522EF80B5008C4180 /* QRScannerViewController.swift */; };
 		D18783E922EF80B5008C4180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783E722EF80B5008C4180 /* Main.storyboard */; };
 		D18783EE22EF80B7008C4180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */; };
 		D1E138ED22F0D96500116AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E138EC22F0D96500116AD0 /* Images.xcassets */; };
@@ -18,12 +18,14 @@
 		D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F622F117B500116AD0 /* NetworkController.swift */; };
 		D1E138F922F1211B00116AD0 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F822F1211B00116AD0 /* RestaurantDetailViewController.swift */; };
 		D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138FA22F126E500116AD0 /* RestaurantController.swift */; };
+		D1E138FD22F1449D00116AD0 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */; };
+		D1E138FF22F144EA00116AD0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FE22F144EA00116AD0 /* User.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D18783E022EF80B5008C4180 /* Queues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18783E322EF80B5008C4180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D18783E522EF80B5008C4180 /* readerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readerViewController.swift; sourceTree = "<group>"; };
+		D18783E522EF80B5008C4180 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		D18783E822EF80B5008C4180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D18783ED22EF80B7008C4180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D18783EF22EF80B7008C4180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		D1E138F622F117B500116AD0 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		D1E138F822F1211B00116AD0 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		D1E138FA22F126E500116AD0 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
+		D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
+		D1E138FE22F144EA00116AD0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				D18783E322EF80B5008C4180 /* AppDelegate.swift */,
-				D18783E522EF80B5008C4180 /* readerViewController.swift */,
+				D18783E522EF80B5008C4180 /* QRScannerViewController.swift */,
 				D1E138EE22F0DF0C00116AD0 /* FormViewController.swift */,
 				D1E138F622F117B500116AD0 /* NetworkController.swift */,
 				D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */,
@@ -76,6 +80,8 @@
 				D1E138FA22F126E500116AD0 /* RestaurantController.swift */,
 				D1E138EC22F0D96500116AD0 /* Images.xcassets */,
 				D18783E722EF80B5008C4180 /* Main.storyboard */,
+				D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */,
+				D1E138FE22F144EA00116AD0 /* User.storyboard */,
 				D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */,
 				D18783EF22EF80B7008C4180 /* Info.plist */,
 			);
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E138ED22F0D96500116AD0 /* Images.xcassets in Resources */,
+				D1E138FF22F144EA00116AD0 /* User.storyboard in Resources */,
+				D1E138FD22F1449D00116AD0 /* Restaurant.storyboard in Resources */,
 				D18783EE22EF80B7008C4180 /* LaunchScreen.storyboard in Resources */,
 				D18783E922EF80B5008C4180 /* Main.storyboard in Resources */,
 			);
@@ -154,7 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E138EF22F0DF0C00116AD0 /* FormViewController.swift in Sources */,
-				D18783E622EF80B5008C4180 /* readerViewController.swift in Sources */,
+				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,
 				D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */,
 				D1E138F522F1122B00116AD0 /* Restaurant.swift in Sources */,
