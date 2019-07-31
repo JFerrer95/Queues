@@ -13,6 +13,7 @@ class Restaurant: Codable {
     var forms: [Form]?
     var name: String
     var phone: String
+    var address: String
     var times: String
     let id: String
     var isCelebrationEnabled: Bool
@@ -20,11 +21,12 @@ class Restaurant: Codable {
     var isOutdoorEnabled: Bool
     var isBarEnabled: Bool
 
-    init(forms: [Form] = [], name: String, phone: String, times: String, id: String = UUID().uuidString, isCelebrationEnabled: Bool = false, isIndoorEnabled: Bool = false, isOutdoorEnabled: Bool = false, isBarEnabled: Bool = false) {
+    init(forms: [Form] = [], name: String, phone: String, times: String, address: String, id: String = UUID().uuidString, isCelebrationEnabled: Bool = false, isIndoorEnabled: Bool = false, isOutdoorEnabled: Bool = false, isBarEnabled: Bool = false) {
         self.forms = forms
         self.name = name
         self.phone = phone
         self.times = times
+        self.address = address
         self.id = id
         self.isCelebrationEnabled = isCelebrationEnabled
         self.isIndoorEnabled = isIndoorEnabled

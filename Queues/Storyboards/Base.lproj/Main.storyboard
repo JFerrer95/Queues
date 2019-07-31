@@ -60,7 +60,7 @@
                 <viewControllerPlaceholder storyboardName="User" id="Bif-15-buP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPT-ey-f5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3528" y="-117"/>
+            <point key="canvasLocation" x="-3660" y="-147"/>
         </scene>
         <!--Restaurant-->
         <scene sceneID="dza-Fc-eZa">
@@ -68,7 +68,7 @@
                 <viewControllerPlaceholder storyboardName="Restaurant" id="J6M-hu-YeT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ebh-SU-N42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3512" y="136"/>
+            <point key="canvasLocation" x="-3660" y="136"/>
         </scene>
     </scenes>
 </document>

@@ -28,8 +28,12 @@ class FormsTableViewController: UITableViewController {
 
             guard let forms = forms else { return }
 
-            print(forms.count)
+            RestaurantController.shared.forms = forms
+            print(RestaurantController.shared.forms.count)
 
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
 
     }
@@ -49,13 +53,16 @@ class FormsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell", for: indexPath)
+        let form = RestaurantController.shared.forms[indexPath.row]
 
-        // Configure the cell...
+        cell.textLabel?.text = form.name
+        cell.detailTextLabel?.text = "Party of \(form.partySize)"
 
         return cell
     }
 
 
     let networkController = NetworkController()
+    
 
 }

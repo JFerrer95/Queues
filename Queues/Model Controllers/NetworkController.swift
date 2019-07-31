@@ -94,6 +94,8 @@ class NetworkController {
 
     func getForms(restaurantID: String, completion: @escaping ([Form]?,Error?) -> Void) {
         let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurantID).appendingPathComponent("Forms").appendingPathExtension("json")
+
+        print(identifierURL.absoluteURL)
         var request = URLRequest(url: identifierURL)
         request.httpMethod = HTTPMethod.get.rawValue
         URLSession.shared.dataTask(with: request) { (data, _, error) in
@@ -112,7 +114,8 @@ class NetworkController {
             let decoder = JSONDecoder()
             do {
 
-                let forms = try decoder.decode([Form].self, from: data)
+                let formsDictionary = try decoder.decode([String: Form].self, from: data)
+                let forms = formsDictionary.map( {$0.value})
                 completion(forms, nil)
 
             } catch {

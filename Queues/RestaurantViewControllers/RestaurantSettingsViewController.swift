@@ -22,14 +22,16 @@ class RestaurantSettingsViewController: UIViewController {
             let phone = self.phoneTextField.text,
             !phone.isEmpty,
             let times = self.timesTextField.text,
-            !times.isEmpty else { return }
+            !times.isEmpty,
+            let address = self.addressTextField.text,
+            !address.isEmpty else { return }
 
         let alert = UIAlertController(title: "Info Changed", message: "Are you sure you want to change this information?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (nil) in
 
 
             if RestaurantController.shared.currentRestaurant == nil {
-                let restaurant = Restaurant(name: name, phone: phone, times: times, isCelebrationEnabled: self.isCelebration.isOn, isIndoorEnabled: self.isIndoor.isOn, isOutdoorEnabled: self.isOutdoor.isOn, isBarEnabled: self.isBar.isOn)
+                let restaurant = Restaurant(name: name, phone: phone, times: times, address: address, isCelebrationEnabled: self.isCelebration.isOn, isIndoorEnabled: self.isIndoor.isOn, isOutdoorEnabled: self.isOutdoor.isOn, isBarEnabled: self.isBar.isOn)
                 self.networkController.createRestaurant(restaurant: restaurant) { (error) in
                     if let error = error {
                         NSLog("Error creating restaurant \(error)")
@@ -48,7 +50,8 @@ class RestaurantSettingsViewController: UIViewController {
                 restaurant.name = name
                 restaurant.phone = phone
                 restaurant.times = times
-                restaurant.isBarEnabled = self.isCelebration.isOn
+                restaurant.address = address
+                restaurant.isCelebrationEnabled = self.isCelebration.isOn
                 restaurant.isIndoorEnabled = self.isIndoor.isOn
                 restaurant.isOutdoorEnabled = self.isOutdoor.isOn
                 restaurant.isBarEnabled = self.isBar.isOn
@@ -104,6 +107,7 @@ class RestaurantSettingsViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var timesTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var isCelebration: UISwitch!
     @IBOutlet weak var isIndoor: UISwitch!
     @IBOutlet weak var isOutdoor: UISwitch!
