@@ -12,11 +12,15 @@ class QRGeneratorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
     @IBAction func buttonPressed(_ sender: Any) {
 
-            let data = UUID().uuidString.data(using: .ascii, allowLossyConversion: false)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if restaurantController.restaurantID != nil {
+            let data = restaurantController.restaurantID?.data(using: .ascii, allowLossyConversion: false)
             let filter = CIFilter(name: "CIQRCodeGenerator")
             filter?.setValue(data, forKey: "inputMessage")
 
@@ -29,11 +33,17 @@ class QRGeneratorViewController: UIViewController {
             let img = UIImage(ciImage: scaledQrImage!)
 
             myImageView.image = img
+        }
+    }
 
-
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowEditRestaurant" {
+            let destinationVC = segue.destination as? RestaurantDetailViewController
+            destinationVC?.restaurantController = restaurantController
+        }
     }
 
 
     @IBOutlet weak var myImageView: UIImageView!
+    let restaurantController = RestaurantController()
 }

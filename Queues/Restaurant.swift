@@ -10,7 +10,7 @@ import Foundation
 
 struct Restaurant: Codable {
 
-    let forms: [Form]
+    let forms: [Form] = []
     let name: String
     let phone: String
     let times: String

@@ -50,18 +50,11 @@ class readerViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
                 if object.type == AVMetadataObject.ObjectType.qr {
                     formID = object.stringValue
-//                    let alert = UIAlertController(title: object.stringValue, message: object.stringValue, preferredStyle: .alert)
-//                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
-//                    alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (nil) in
-//                        self.performSegue(withIdentifier: "ShowForm", sender: nil)
-//                        self.session.stopRunning()
-//                    }))
-//
-//
-//                    present(alert, animated: true, completion: nil)
+
+                    
 
                     self.session.stopRunning()
-                        self.performSegue(withIdentifier: "ShowForm", sender: nil)
+                    self.performSegue(withIdentifier: "ShowForm", sender: nil)
                 }
             }
         }

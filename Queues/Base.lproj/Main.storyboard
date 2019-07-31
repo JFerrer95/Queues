@@ -235,19 +235,31 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNf-U0-SHs">
+                                <rect key="frame" x="20" y="375" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JGB-Zv-v5a" firstAttribute="leading" secondItem="H1o-jU-Xab" secondAttribute="leading" constant="20" id="20b-m4-Abu"/>
                             <constraint firstItem="JGB-Zv-v5a" firstAttribute="top" secondItem="H1o-jU-Xab" secondAttribute="top" constant="20" id="AmK-xx-epf"/>
+                            <constraint firstItem="PNf-U0-SHs" firstAttribute="top" secondItem="6C1-zm-erx" secondAttribute="bottom" constant="89" id="Qsd-q9-SU1"/>
                             <constraint firstItem="H1o-jU-Xab" firstAttribute="trailing" secondItem="JGB-Zv-v5a" secondAttribute="trailing" constant="20" id="RbO-Wl-eAc"/>
+                            <constraint firstItem="H1o-jU-Xab" firstAttribute="trailing" secondItem="PNf-U0-SHs" secondAttribute="trailing" constant="20" id="ZOR-9o-9O7"/>
+                            <constraint firstItem="PNf-U0-SHs" firstAttribute="leading" secondItem="H1o-jU-Xab" secondAttribute="leading" constant="20" id="z2e-42-kUa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H1o-jU-Xab"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantLabel" destination="PNf-U0-SHs" id="b4S-Ot-sRv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N6r-Z5-ZHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="-391"/>
+            <point key="canvasLocation" x="763.768115942029" y="-391.07142857142856"/>
         </scene>
         <!--All Queues-->
         <scene sceneID="TlM-NH-hNg">
@@ -303,6 +315,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UMk-fT-Bmw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WLg-uD-3Yb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

@@ -19,13 +19,13 @@ class RestaurantDetailViewController: UIViewController {
             let times = timesTextField.text,
             !times.isEmpty else { return }
 
-
-        let restaurant = Restaurant(forms: [], name: name, phone: phone, times: times, id: UUID().uuidString)
+        let restaurant = Restaurant( name: name, phone: phone, times: times, id: UUID().uuidString)
 
         networkController.createRestaurant(restaurant: restaurant) { (error) in
             if let error = error {
                 NSLog("Error creating restaurant \(error)")
             }
+            self.restaurantController?.restaurantID = restaurant.id
         }
     }
 
@@ -39,4 +39,5 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var timesTextField: UITextField!
     let networkController = NetworkController()
+    var restaurantController: RestaurantController?
 }

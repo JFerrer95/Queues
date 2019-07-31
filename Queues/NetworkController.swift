@@ -35,6 +35,41 @@ class NetworkController {
             completion(nil)
             }.resume()
     }
+
+    func getInfo(for restaurantID: String, completion: @escaping (Restaurant?,Error?) -> Void) {
+        let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurantID).appendingPathExtension("json")
+
+        var request = URLRequest(url: identifierURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+            if let error = error {
+                NSLog("Error fetching restaurant: \(error)")
+                completion(nil, error)
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned from dataTask")
+                completion(nil, error)
+                return
+            }
+
+            let decoder = JSONDecoder()
+            do {
+
+                let restaurant = try decoder.decode(Restaurant.self, from: data)
+                completion(restaurant, nil)
+
+            } catch {
+                NSLog("Error decoding pokemon: \(error)")
+                completion(nil, error)
+            }
+            }.resume()
+
+
+    }
+
 }
 
 enum HTTPMethod: String {
@@ -42,4 +77,12 @@ enum HTTPMethod: String {
     case put = "PUT"
     case post = "POST"
     case delete = "DELETE"
+}
+
+enum NetworkError: Error {
+    case noDataReturned
+    case noBearer
+    case badAuth
+    case apiError
+    case noDecode
 }
