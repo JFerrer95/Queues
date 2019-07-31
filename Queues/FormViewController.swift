@@ -28,6 +28,20 @@ class FormViewController: UIViewController {
         }
     }
 
+    @IBAction func buttonPressed(_ sender: Any) {
+
+        let form = Form(name: "Jon", phone: "7189094425", partySize: 5, id: UUID().uuidString)
+
+        guard let formID = formID else { return }
+
+        networkController.fillForm(restaurantID: formID, form: form) { (error) in
+            if let error = error {
+                NSLog("Error filling form: \(error)")
+            }
+        }
+
+
+    }
 
     
 

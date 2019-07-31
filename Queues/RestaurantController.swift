@@ -9,9 +9,5 @@
 import Foundation
 
 class RestaurantController {
-
     var restaurantID: String?
-
-    
-
 }

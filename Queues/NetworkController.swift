@@ -13,12 +13,9 @@ class NetworkController {
     static let baseURL = URL(string: "https://queues-fenam.firebaseio.com/")!
 
     func createRestaurant(restaurant: Restaurant, completion: @escaping (Error?) -> Void) {
-        
         let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurant.id).appendingPathExtension("json")
         var request = URLRequest(url: identifierURL)
-
         request.httpMethod = HTTPMethod.put.rawValue
-
         do {
             let jsonEncoder = JSONEncoder()
             request.httpBody = try jsonEncoder.encode(restaurant)
@@ -36,12 +33,36 @@ class NetworkController {
             }.resume()
     }
 
+    func fillForm(restaurantID: String, form: Form, completion: @escaping (Error?) -> Void) {
+
+        let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants")
+                                                    .appendingPathComponent(restaurantID)
+                                                    .appendingPathComponent("Forms")
+                                                    .appendingPathComponent(form.id)
+                                                    .appendingPathExtension("json")
+        var request = URLRequest(url: identifierURL)
+        request.httpMethod = HTTPMethod.put.rawValue
+        do {
+            let jsonEncoder = JSONEncoder()
+            request.httpBody = try jsonEncoder.encode(form)
+        } catch {
+            NSLog("Error encoding form: \(error)")
+        }
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+
+            if let error = error {
+                NSLog("Error pushing form to Firebase: \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+            }.resume()
+    }
+
     func getInfo(for restaurantID: String, completion: @escaping (Restaurant?,Error?) -> Void) {
         let identifierURL = NetworkController.baseURL.appendingPathComponent("Restaurants").appendingPathComponent(restaurantID).appendingPathExtension("json")
-
         var request = URLRequest(url: identifierURL)
         request.httpMethod = HTTPMethod.get.rawValue
-
         URLSession.shared.dataTask(with: request) { (data, _, error) in
 
             if let error = error {
@@ -66,8 +87,6 @@ class NetworkController {
                 completion(nil, error)
             }
             }.resume()
-
-
     }
 
 }

@@ -26,18 +26,15 @@ class RestaurantDetailViewController: UIViewController {
                 NSLog("Error creating restaurant \(error)")
             }
             self.restaurantController?.restaurantID = restaurant.id
+
         }
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var timesTextField: UITextField!
     let networkController = NetworkController()
     var restaurantController: RestaurantController?
+    var restaurant: Restaurant?
 }
