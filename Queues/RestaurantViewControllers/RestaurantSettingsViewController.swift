@@ -1,5 +1,5 @@
 //
-//  RestaurantDetailViewController.swift
+//  RestaurantSettingsViewController.swift
 //  Queues
 //
 //  Created by Jonathan Ferrer on 7/30/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantDetailViewController: UIViewController {
+class RestaurantSettingsViewController: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
 
@@ -19,7 +19,7 @@ class RestaurantDetailViewController: UIViewController {
             let times = timesTextField.text,
             !times.isEmpty else { return }
 
-        let restaurant = Restaurant( name: name, phone: phone, times: times, id: UUID().uuidString)
+        let restaurant = Restaurant(name: name, phone: phone, times: times)
 
         networkController.createRestaurant(restaurant: restaurant) { (error) in
             if let error = error {
@@ -33,6 +33,7 @@ class RestaurantDetailViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+
     @IBOutlet weak var timesTextField: UITextField!
     let networkController = NetworkController()
     var restaurantController: RestaurantController?

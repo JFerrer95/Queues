@@ -30,7 +30,7 @@ class FormViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: Any) {
 
-        let form = Form(name: "Jon", phone: "7189094425", partySize: 5, id: UUID().uuidString)
+        let form = Form(name: "Jon", phone: "7189094425", partySize: 5)
 
         guard let formID = formID else { return }
 

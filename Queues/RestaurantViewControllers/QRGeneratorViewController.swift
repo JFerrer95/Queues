@@ -38,7 +38,7 @@ class QRGeneratorViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowEditRestaurant" {
-            let destinationVC = segue.destination as? RestaurantDetailViewController
+            let destinationVC = segue.destination as? RestaurantSettingsViewController
             destinationVC?.restaurantController = restaurantController
         }
     }

@@ -8,21 +8,31 @@
 
 import Foundation
 
-struct Restaurant: Codable {
+class Restaurant: Codable {
 
-    let forms: [Form] = []
+    var forms: [Form]
     let name: String
-    let phone: String
-    let times: String
+    var phone: String
+    var times: String
     let id: String
+    var isCelebrationEnabled: Bool
+    var isIndoorEnabled: Bool
+    var isOutdoorEnabled: Bool
+    var isBarEnabled: Bool
+
+    init(forms: [Form] = [], name: String, phone: String, times: String, id: String = UUID().uuidString, isCelebrationEnabled: Bool = false, isIndoorEnabled: Bool = false, isOutdoorEnabled: Bool = false, isBarEnabled: Bool = false) {
+        self.forms = forms
+        self.name = name
+        self.phone = phone
+        self.times = times
+        self.id = id
+        self.isCelebrationEnabled = isCelebrationEnabled
+        self.isIndoorEnabled = isIndoorEnabled
+        self.isOutdoorEnabled = isOutdoorEnabled
+        self.isBarEnabled = isBarEnabled
+    }
     
 }
 
-struct Form: Codable {
 
-    let name: String
-    let phone: String
-    let partySize: Int
-    let id: String
-}
 
