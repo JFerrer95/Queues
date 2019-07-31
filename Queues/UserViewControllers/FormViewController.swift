@@ -24,6 +24,7 @@ class FormViewController: UIViewController {
             guard let currentRestaurant = self.currentRestaurant else { return }
             DispatchQueue.main.async {
                 self.restaurantLabel.text = currentRestaurant.name
+                print(currentRestaurant.isBarEnabled)
 
             }
         }
