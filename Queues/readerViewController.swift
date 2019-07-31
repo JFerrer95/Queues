@@ -1,0 +1,84 @@
+//
+//  readerViewController.swift
+//  QRGenerator
+//
+//  Created by Jonathan Ferrer on 7/7/19.
+//  Copyright © 2019 Jonathan Ferrer. All rights reserved.
+//
+
+import UIKit
+import AVFoundation
+
+class readerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+
+        do {
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
+            session.addInput(input)
+        } catch {
+            NSLog("Error")
+        }
+
+        let output = AVCaptureMetadataOutput()
+        session.addOutput(output)
+
+        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+
+        output.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
+
+        video = AVCaptureVideoPreviewLayer(session: session)
+        video.frame = view.layer.bounds
+        cameraView.layer.addSublayer(video)
+        session.startRunning()
+
+        view.bringSubviewToFront(square)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        session.startRunning()
+    }
+
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if metadataObjects != nil && metadataObjects.count != 0 {
+            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
+                if object.type == AVMetadataObject.ObjectType.qr {
+                    formID = object.stringValue
+//                    let alert = UIAlertController(title: object.stringValue, message: object.stringValue, preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "Retake", style: .default, handler: nil))
+//                    alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (nil) in
+//                        self.performSegue(withIdentifier: "ShowForm", sender: nil)
+//                        self.session.stopRunning()
+//                    }))
+//
+//
+//                    present(alert, animated: true, completion: nil)
+
+                    self.session.stopRunning()
+                        self.performSegue(withIdentifier: "ShowForm", sender: nil)
+                }
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowForm" {
+            let destinationVC = segue.destination as? FormViewController
+            destinationVC?.formID = formID
+        }
+    }
+
+
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var square: UIImageView!
+    var video = AVCaptureVideoPreviewLayer()
+    let session = AVCaptureSession()
+    var formID: String?
+
+}
