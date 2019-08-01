@@ -98,7 +98,6 @@ class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPicker
             let celebration = userCelebrationTextField.text,
             let partySizeString = userPartySizeTextField.text,
             var partySize = Int(partySizeString),
-            let restaurantID = restaurantID,
             let restaurant = currentRestaurant else { return }
 
         if partySizeString == "" {
@@ -108,13 +107,19 @@ class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPicker
         let pickerSelection = userSeatingPicker.selectedRow(inComponent: 0)
         let seating = seatingOptions[pickerSelection]
 
-        let form = Form(name: name, phone: phone, partySize: partySize, celebration: celebration, seating: seating, restaurantID: restaurantID)
+        let form = Form(name: name, phone: phone, partySize: partySize, celebration: celebration, seating: seating, restaurantName: restaurant.name, restaurantPhone: restaurant.phone, restaurantID: restaurant.id)
 
+        
         networkController.fillForm(restaurantID: restaurant.id, form: form) { (error) in
             if let error = error {
                 NSLog("Error filling form: \(error)")
             }
-            self.navigationController?.popToRootViewController(animated: true)
+
+            UserController.shared.addForm(form: form)
+
+            DispatchQueue.main.async {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
 
     }
@@ -136,6 +141,7 @@ class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     var restaurantID: String?
     let networkController = NetworkController()
+
     var currentRestaurant: Restaurant?
     var seatingOptions: [String] = []
 

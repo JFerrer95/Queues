@@ -63,7 +63,11 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowForm" {
             let destinationVC = segue.destination as? UserFormViewController
+
+
             destinationVC?.restaurantID = formID
+
+
         }
     }
 
@@ -72,6 +76,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     @IBOutlet weak var square: UIImageView!
     var video = AVCaptureVideoPreviewLayer()
     let session = AVCaptureSession()
+
     var formID: String?
 
 }

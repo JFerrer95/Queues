@@ -10,6 +10,8 @@
 		D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */; };
 		D187826122F26BC6004FABDC /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826022F26BC6004FABDC /* UserController.swift */; };
 		D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */; };
+		D187826722F27EEA004FABDC /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826622F27EEA004FABDC /* RestaurantCell.swift */; };
+		D187826922F280D4004FABDC /* CurrentReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826822F280D4004FABDC /* CurrentReservationViewController.swift */; };
 		D18783E422EF80B5008C4180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E322EF80B5008C4180 /* AppDelegate.swift */; };
 		D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E522EF80B5008C4180 /* QRScannerViewController.swift */; };
 		D18783E922EF80B5008C4180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783E722EF80B5008C4180 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 		D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormTableViewCell.swift; sourceTree = "<group>"; };
 		D187826022F26BC6004FABDC /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormsTableViewController.swift; sourceTree = "<group>"; };
+		D187826622F27EEA004FABDC /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		D187826822F280D4004FABDC /* CurrentReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentReservationViewController.swift; sourceTree = "<group>"; };
 		D18783E022EF80B5008C4180 /* Queues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18783E322EF80B5008C4180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18783E522EF80B5008C4180 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -81,8 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				D1E1390722F1530400116AD0 /* Resources */,
-				D1E1390022F147AB00116AD0 /* UserViewControllers */,
 				D1E1390122F147CE00116AD0 /* RestaurantViewControllers */,
+				D1E1390022F147AB00116AD0 /* UserViewControllers */,
 				D1E1390422F14EFF00116AD0 /* Models */,
 				D1E1390522F152D000116AD0 /* Model Controllers */,
 				D1E1390622F152E100116AD0 /* Storyboards */,
@@ -93,9 +97,11 @@
 		D1E1390022F147AB00116AD0 /* UserViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */,
+				D187826622F27EEA004FABDC /* RestaurantCell.swift */,
+				D187826822F280D4004FABDC /* CurrentReservationViewController.swift */,
 				D18783E522EF80B5008C4180 /* QRScannerViewController.swift */,
 				D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */,
-				D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */,
 			);
 			path = UserViewControllers;
 			sourceTree = "<group>";
@@ -230,12 +236,14 @@
 				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,
 				D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */,
+				D187826722F27EEA004FABDC /* RestaurantCell.swift in Sources */,
 				D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */,
 				D187826122F26BC6004FABDC /* UserController.swift in Sources */,
 				D1E138F522F1122B00116AD0 /* Restaurant.swift in Sources */,
 				D1E1390322F1497400116AD0 /* Form.swift in Sources */,
 				D18783E422EF80B5008C4180 /* AppDelegate.swift in Sources */,
 				D1E138F922F1211B00116AD0 /* RestaurantSettingsViewController.swift in Sources */,
+				D187826922F280D4004FABDC /* CurrentReservationViewController.swift in Sources */,
 				D1E138F122F0F80F00116AD0 /* QRGeneratorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

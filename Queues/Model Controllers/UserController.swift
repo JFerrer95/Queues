@@ -10,5 +10,14 @@ import Foundation
 
 class UserController {
 
+    static let shared = UserController()
+    private init() {}
+
+    func addForm(form: Form) {
+        currentForm = form
+        forms.append(form)
+    }
+
     var forms: [Form] = []
+    var currentForm: Form?
 }

@@ -13,78 +13,89 @@ class UserFormsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+    }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateCurrentForm()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return UserController.shared.forms.count
     }
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
+        let form = UserController.shared.forms[indexPath.row]
+        guard let isReady = form.isReady else { return cell}
+        cell.textLabel?.text = form.restaurantName
+        if isReady {
+            cell.detailTextLabel?.text = "Ready"
+            cell.detailTextLabel?.textColor = .green
+        } else {
+            cell.detailTextLabel?.text = "Not Ready"
+            cell.detailTextLabel?.textColor = .red
+        }
         return cell
     }
-    */
+ 
+    func updateCurrentForm() {
+        guard let restaurantID = UserController.shared.currentForm?.restaurantID,
+            let formID = UserController.shared.currentForm?.id else { return }
+        networkController.getForm(restaurantID: restaurantID, formID: formID) { (form, error) in
+            if let error = error {
+                NSLog("Error fetching form: \(error)")
+            }
+            guard let form = form else { return }
+            UserController.shared.currentForm = form
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+            DispatchQueue.main.async {
+                self.updateViews()
+            }
+        }
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    func updateViews() {
+        guard let form = UserController.shared.currentForm,
+            let isReady = form.isReady else { return }
+
+        restaurantNameLabel.text = form.restaurantName
+        restaurantPhoneLabel.text = form.restaurantPhone
+        partySizeLabel.text = "Party of \(form.partySize)"
+        let date = Date(timeIntervalSince1970: form.timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        let strDate = dateFormatter.string(from: date)
+        timestampLabel.text = strDate
+        if isReady {
+            isReadyLabel.text = "Table is ready"
+        } else {
+            isReadyLabel.text = "Table is not ready"
+        }
+
     }
-    */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
+    @IBOutlet weak var isReadyLabel: UILabel!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var restaurantPhoneLabel: UILabel!
+    @IBOutlet weak var partySizeLabel: UILabel!
+    @IBOutlet weak var timestampLabel: UILabel!
+    var networkController = NetworkController()
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }
