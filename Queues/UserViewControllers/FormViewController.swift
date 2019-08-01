@@ -8,15 +8,63 @@
 
 import UIKit
 
-class FormViewController: UIViewController {
+class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        updateViews()
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return seatingOptions.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return seatingOptions[row]
     }
 
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userSeatingPicker.dataSource = self
+        userSeatingPicker.delegate = self
+        updateViews()
+
+        userNameTextField.delegate = self
+        userPartySizeTextField.delegate = self
+        userNameTextField.returnKeyType = .done
+        userPartySizeTextField.returnKeyType = .done
+
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        userNameTextField.resignFirstResponder()
+        userPartySizeTextField.resignFirstResponder()
+        return true
+    }
+
+    func updateUserOptions() {
+
+        guard let currentRestaurant = currentRestaurant else { return }
+
+        if currentRestaurant.isCelebrationEnabled {
+            userCelebrationTextField.isEnabled = true
+        }
+
+        if currentRestaurant.isIndoorEnabled {
+            seatingOptions.append("Indoor Seating")
+        }
+
+        if currentRestaurant.isOutdoorEnabled {
+            seatingOptions.append("Outdoor Seating")
+        }
+
+        if currentRestaurant.isBarEnabled {
+            seatingOptions.append("Bar Seating")
+        }
+        userSeatingPicker.reloadAllComponents()
+    }
 
     func updateViews() {
         guard let formID = formID else { return }
@@ -34,9 +82,43 @@ class FormViewController: UIViewController {
                 self.restaurantPhoneLabel.text = currentRestaurant.phone
                 self.restaurantAddressLabel.text = currentRestaurant.address
                 self.restaurantTimesLabel.text = currentRestaurant.times
+                self.updateUserOptions()
+
             }
         }
     }
+
+
+    @IBAction func submitButtonPressed(_ sender: Any) {
+
+        guard let name = userNameTextField.text,
+            !name.isEmpty,
+            let phone = userPhoneTextField.text,
+            !phone.isEmpty,
+            let celebration = userCelebrationTextField.text,
+            let partySizeString = userPartySizeTextField.text,
+            var partySize = Int(partySizeString),
+            let restaurant = currentRestaurant else { return }
+
+        if partySizeString == "" {
+            partySize = 1
+        }
+
+        let pickerSelection = userSeatingPicker.selectedRow(inComponent: 0)
+        let seating = seatingOptions[pickerSelection]
+
+        let form = Form(name: name, phone: phone, partySize: partySize, celebration: celebration, seating: seating)
+
+        networkController.fillForm(restaurantID: restaurant.id, form: form) { (error) in
+            if let error = error {
+                NSLog("Error filling form: \(error)")
+            }
+        }
+
+    }
+    
+
+    
 
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var restaurantPhoneLabel: UILabel!
@@ -52,5 +134,6 @@ class FormViewController: UIViewController {
     var formID: String?
     let networkController = NetworkController()
     var currentRestaurant: Restaurant?
+    var seatingOptions: [String] = []
 
 }

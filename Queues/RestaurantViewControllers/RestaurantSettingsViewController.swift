@@ -45,7 +45,7 @@ class RestaurantSettingsViewController: UIViewController {
                     }
                 }
             } else {
-
+                
                 guard let restaurant = RestaurantController.shared.currentRestaurant else { return }
                 restaurant.name = name
                 restaurant.phone = phone
@@ -67,21 +67,15 @@ class RestaurantSettingsViewController: UIViewController {
                     }
                 }
             }
-
-
         }))
 
 
         alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: nil))
 
         present(alert, animated: true, completion: nil)
-
-
-
-
-
-
     }
+
+
 
     func updateViews() {
         if RestaurantController.shared.currentRestaurant != nil {
@@ -93,6 +87,7 @@ class RestaurantSettingsViewController: UIViewController {
             nameTextField.text = currentRestaurnt?.name
             phoneTextField.text = currentRestaurnt?.phone
             timesTextField.text = currentRestaurnt?.times
+            addressTextField.text = currentRestaurnt?.address
 
             isCelebration.isOn = isCelebrationEnabled
             isIndoor.isOn = isIndoorEnabled

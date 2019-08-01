@@ -25,9 +25,6 @@ class QRGeneratorViewController: UIViewController {
             filter?.setValue(data, forKey: "inputMessage")
 
             let transform = CGAffineTransform(scaleX: 10, y: 10)
-
-
-
             let scaledQrImage = filter?.outputImage?.transformed(by: transform)
 
             let img = UIImage(ciImage: scaledQrImage!)

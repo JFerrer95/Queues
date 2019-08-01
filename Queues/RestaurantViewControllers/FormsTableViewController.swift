@@ -52,17 +52,25 @@ class FormsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell", for: indexPath) as! FormTableViewCell
         let form = RestaurantController.shared.forms[indexPath.row]
 
-        cell.textLabel?.text = form.name
-        cell.detailTextLabel?.text = "Party of \(form.partySize)"
+        cell.namelabel.text = form.name
+        cell.partySizeLabel.text = "Party of \(form.partySize)"
+        cell.seatingOptionLabel.text = form.seating
+
+        let date = Date(timeIntervalSince1970: form.timestamp)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        let strDate = dateFormatter.string(from: date)
+        cell.timestampLabel.text = strDate
+
 
         return cell
     }
-
-
     let networkController = NetworkController()
+
     
 
 }

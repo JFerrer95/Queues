@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SbK-mx-W5B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5qV-O2-CLw">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,25 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="SR9-xi-BFF">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SbK-mx-W5B" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="56j-Mq-b49">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="ktb-pt-MD8" kind="relationship" relationship="viewControllers" id="9De-al-H3l"/>
-                        <segue destination="5qV-O2-CLw" kind="relationship" relationship="viewControllers" id="oMM-ok-i3x"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gvf-ZW-4Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3033" y="-317"/>
-        </scene>
         <!--Scanner View Controller-->
         <scene sceneID="n76-29-XnP">
             <objects>
@@ -38,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Square" translatesAutoresizingMaskIntoConstraints="NO" id="xNB-Wy-0gb">
-                                <rect key="frame" x="106" y="349.5" width="202" height="202"/>
+                                <rect key="frame" x="106" y="374" width="202" height="202"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xNB-Wy-0gb" secondAttribute="height" multiplier="1:1" id="5os-6k-amv"/>
                                     <constraint firstAttribute="height" constant="202" id="BdO-hB-b1u"/>
@@ -62,9 +43,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ujy-mp-cgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-251" y="-391"/>
+            <point key="canvasLocation" x="-510" y="-502"/>
         </scene>
-        <!--Form View Controller-->
+        <!--Title-->
         <scene sceneID="uWB-5p-dDk">
             <objects>
                 <viewController storyboardIdentifier="Form" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8dv-O3-pqk" customClass="FormViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,7 +100,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Celebration" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05X-WK-vau">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Celebration" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="05X-WK-vau">
                                         <rect key="frame" x="0.0" y="76" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -135,6 +116,10 @@
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5P-PY-Vm3">
                                 <rect key="frame" x="0.0" y="382" width="414" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8dv-O3-pqk" id="bOc-b2-fbz"/>
+                                    <outlet property="delegate" destination="8dv-O3-pqk" id="NA1-gb-Yiu"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,6 +136,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="frF-Dg-LII"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="aUN-P9-cht">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zAO-Tc-6W4">
+                            <connections>
+                                <action selector="submitButtonPressed:" destination="8dv-O3-pqk" id="Vsk-y1-1zD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="restaurantAddressLabel" destination="3q0-FF-VJf" id="VPR-dx-Qo0"/>
                         <outlet property="restaurantNameLabel" destination="yOY-hO-8pT" id="SeA-Af-P5d"/>
@@ -165,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rMK-ac-Kv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702.89855072463774" y="-391.07142857142856"/>
+            <point key="canvasLocation" x="328" y="-502"/>
         </scene>
         <!--All Queues-->
         <scene sceneID="aDu-2d-Sz5">
@@ -191,10 +183,17 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Queues" id="F6h-NA-KBT"/>
+                    <navigationItem key="navigationItem" id="gZr-82-Gif">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="FMO-9J-51s">
+                            <connections>
+                                <segue destination="So7-2k-wfA" kind="show" id="1Pv-Ec-YjT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcK-nv-p28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1333" y="-1086"/>
+            <point key="canvasLocation" x="-1296" y="-502"/>
         </scene>
         <!--Check-In-->
         <scene sceneID="hHA-pD-6ZP">
@@ -208,12 +207,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="So7-2k-wfA" kind="relationship" relationship="rootViewController" id="aZv-bO-5lF"/>
+                        <segue destination="ktb-pt-MD8" kind="relationship" relationship="rootViewController" id="liK-2d-vc2"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvs-qt-N2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1138" y="-391"/>
+            <point key="canvasLocation" x="-2187" y="-502"/>
         </scene>
     </scenes>
     <resources>
