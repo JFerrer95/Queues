@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Form: Codable {
+class Form: Codable, Equatable {
+    static func == (lhs: Form, rhs: Form) -> Bool {
+        return lhs.isReady == rhs.isReady
+    }
+
     let name: String
     let phone: String
     let partySize: Int
