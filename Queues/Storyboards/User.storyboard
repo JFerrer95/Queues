@@ -160,6 +160,66 @@
             </objects>
             <point key="canvasLocation" x="328" y="-502"/>
         </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="1Re-mA-3UA">
+            <objects>
+                <navigationController id="4gi-bt-Oxf" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T7h-vb-K4c">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="200"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="lra-Be-n9g" kind="relationship" relationship="rootViewController" id="ple-qN-rVa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j8v-Ch-nh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1455" y="-1213"/>
+        </scene>
+        <!--User Settings Table View Controller-->
+        <scene sceneID="hrb-zV-Yni">
+            <objects>
+                <tableViewController id="lra-Be-n9g" customClass="UserSettingsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uk6-fX-2vJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSettingsCell" textLabel="TiK-FY-56n" rowHeight="61" style="IBUITableViewCellStyleDefault" id="1a6-gV-g8j">
+                                <rect key="frame" x="0.0" y="28" width="414" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1a6-gV-g8j" id="ycZ-O8-dmo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TiK-FY-56n">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lra-Be-n9g" id="C1r-LI-Urd"/>
+                            <outlet property="delegate" destination="lra-Be-n9g" id="fkq-qk-5wu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="L8A-fU-BBJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEp-2d-gcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-486.95652173913049" y="-1217.4107142857142"/>
+        </scene>
         <!--All Queues-->
         <scene sceneID="aDu-2d-Sz5">
             <objects>
@@ -266,6 +326,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Queues" id="F6h-NA-KBT"/>
                     <navigationItem key="navigationItem" id="gZr-82-Gif">
+                        <barButtonItem key="leftBarButtonItem" title="User Settings" id="BOJ-i2-haD">
+                            <connections>
+                                <segue destination="4gi-bt-Oxf" kind="presentation" id="uNj-ml-h2f"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Scan Restaurant" id="FMO-9J-51s">
                             <connections>
                                 <segue destination="So7-2k-wfA" kind="show" id="Zxt-Y3-2Eu"/>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E522EF80B5008C4180 /* QRScannerViewController.swift */; };
 		D18783E922EF80B5008C4180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783E722EF80B5008C4180 /* Main.storyboard */; };
 		D18783EE22EF80B7008C4180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */; };
+		D19991AA22F38E9700229D3A /* UserSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */; };
+		D19991AC22F39A8700229D3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19991AB22F39A8700229D3A /* User.swift */; };
 		D1E138ED22F0D96500116AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E138EC22F0D96500116AD0 /* Images.xcassets */; };
 		D1E138EF22F0DF0C00116AD0 /* UserFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */; };
 		D1E138F122F0F80F00116AD0 /* QRGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */; };
@@ -26,9 +28,12 @@
 		D1E138FF22F144EA00116AD0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FE22F144EA00116AD0 /* User.storyboard */; };
 		D1E1390322F1497400116AD0 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390222F1497400116AD0 /* Form.swift */; };
 		D1E1390922F1569E00116AD0 /* RestaurantFormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390822F1569E00116AD0 /* RestaurantFormsTableViewController.swift */; };
+		F2931F4A4F80950A728C3387 /* Pods_Queues.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8838DE4425B9D93C8A2B535 /* Pods_Queues.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		645E9A8443A1E91265D07423 /* Pods-Queues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queues.release.xcconfig"; path = "Target Support Files/Pods-Queues/Pods-Queues.release.xcconfig"; sourceTree = "<group>"; };
+		8547B78D1926D40B445A259E /* Pods-Queues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queues.debug.xcconfig"; path = "Target Support Files/Pods-Queues/Pods-Queues.debug.xcconfig"; sourceTree = "<group>"; };
 		D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormTableViewCell.swift; sourceTree = "<group>"; };
 		D187826022F26BC6004FABDC /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormsTableViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +44,8 @@
 		D18783E822EF80B5008C4180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D18783ED22EF80B7008C4180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D18783EF22EF80B7008C4180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewController.swift; sourceTree = "<group>"; };
+		D19991AB22F39A8700229D3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1E138EC22F0D96500116AD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewController.swift; sourceTree = "<group>"; };
 		D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +57,7 @@
 		D1E138FE22F144EA00116AD0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		D1E1390222F1497400116AD0 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		D1E1390822F1569E00116AD0 /* RestaurantFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormsTableViewController.swift; sourceTree = "<group>"; };
+		F8838DE4425B9D93C8A2B535 /* Pods_Queues.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queues.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2931F4A4F80950A728C3387 /* Pods_Queues.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8DF7E6D0A5E161FF49AD29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8547B78D1926D40B445A259E /* Pods-Queues.debug.xcconfig */,
+				645E9A8443A1E91265D07423 /* Pods-Queues.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		87C03A1FCAFD902BBC1FBBFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8838DE4425B9D93C8A2B535 /* Pods_Queues.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D18783D722EF80B5008C4180 = {
 			isa = PBXGroup;
 			children = (
 				D18783E222EF80B5008C4180 /* Queues */,
 				D18783E122EF80B5008C4180 /* Products */,
+				0D8DF7E6D0A5E161FF49AD29 /* Pods */,
+				87C03A1FCAFD902BBC1FBBFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +127,7 @@
 				D187826622F27EEA004FABDC /* RestaurantCell.swift */,
 				D18783E522EF80B5008C4180 /* QRScannerViewController.swift */,
 				D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */,
+				D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */,
 			);
 			path = UserViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +148,7 @@
 			children = (
 				D1E138F422F1122B00116AD0 /* Restaurant.swift */,
 				D1E1390222F1497400116AD0 /* Form.swift */,
+				D19991AB22F39A8700229D3A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D18783F222EF80B7008C4180 /* Build configuration list for PBXNativeTarget "Queues" */;
 			buildPhases = (
+				61BC919B64F6A7FA96904282 /* [CP] Check Pods Manifest.lock */,
 				D18783DC22EF80B5008C4180 /* Sources */,
 				D18783DD22EF80B5008C4180 /* Frameworks */,
 				D18783DE22EF80B5008C4180 /* Resources */,
+				5B2AD1F4E1B4095D87987E5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +254,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B2AD1F4E1B4095D87987E5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Queues/Pods-Queues-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Queues/Pods-Queues-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Queues/Pods-Queues-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61BC919B64F6A7FA96904282 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Queues-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D18783DC22EF80B5008C4180 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,6 +304,8 @@
 				D1E138EF22F0DF0C00116AD0 /* UserFormViewController.swift in Sources */,
 				D1E1390922F1569E00116AD0 /* RestaurantFormsTableViewController.swift in Sources */,
 				D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */,
+				D19991AA22F38E9700229D3A /* UserSettingsTableViewController.swift in Sources */,
+				D19991AC22F39A8700229D3A /* User.swift in Sources */,
 				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,
 				D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */,
@@ -384,6 +460,7 @@
 		};
 		D18783F322EF80B7008C4180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8547B78D1926D40B445A259E /* Pods-Queues.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -403,6 +480,7 @@
 		};
 		D18783F422EF80B7008C4180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 645E9A8443A1E91265D07423 /* Pods-Queues.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

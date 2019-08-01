@@ -1,0 +1,6 @@
+framework module Pods_Queues {
+  umbrella header "Pods-Queues-umbrella.h"
+
+  export *
+  module * { export * }
+}
