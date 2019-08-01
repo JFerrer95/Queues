@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormTableViewCell: UITableViewCell {
+class RestaurantFormTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

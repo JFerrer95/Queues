@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D187825F22F25A31004FABDC /* FormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187825E22F25A31004FABDC /* FormTableViewCell.swift */; };
+		D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */; };
+		D187826122F26BC6004FABDC /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826022F26BC6004FABDC /* UserController.swift */; };
+		D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */; };
 		D18783E422EF80B5008C4180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E322EF80B5008C4180 /* AppDelegate.swift */; };
 		D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18783E522EF80B5008C4180 /* QRScannerViewController.swift */; };
 		D18783E922EF80B5008C4180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783E722EF80B5008C4180 /* Main.storyboard */; };
 		D18783EE22EF80B7008C4180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */; };
 		D1E138ED22F0D96500116AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E138EC22F0D96500116AD0 /* Images.xcassets */; };
-		D1E138EF22F0DF0C00116AD0 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138EE22F0DF0C00116AD0 /* FormViewController.swift */; };
+		D1E138EF22F0DF0C00116AD0 /* UserFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */; };
 		D1E138F122F0F80F00116AD0 /* QRGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */; };
 		D1E138F522F1122B00116AD0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F422F1122B00116AD0 /* Restaurant.swift */; };
 		D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F622F117B500116AD0 /* NetworkController.swift */; };
@@ -22,11 +24,13 @@
 		D1E138FD22F1449D00116AD0 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */; };
 		D1E138FF22F144EA00116AD0 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E138FE22F144EA00116AD0 /* User.storyboard */; };
 		D1E1390322F1497400116AD0 /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390222F1497400116AD0 /* Form.swift */; };
-		D1E1390922F1569E00116AD0 /* FormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */; };
+		D1E1390922F1569E00116AD0 /* RestaurantFormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E1390822F1569E00116AD0 /* RestaurantFormsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D187825E22F25A31004FABDC /* FormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTableViewCell.swift; sourceTree = "<group>"; };
+		D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormTableViewCell.swift; sourceTree = "<group>"; };
+		D187826022F26BC6004FABDC /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormsTableViewController.swift; sourceTree = "<group>"; };
 		D18783E022EF80B5008C4180 /* Queues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18783E322EF80B5008C4180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18783E522EF80B5008C4180 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +38,7 @@
 		D18783ED22EF80B7008C4180 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D18783EF22EF80B7008C4180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1E138EC22F0D96500116AD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D1E138EE22F0DF0C00116AD0 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewController.swift; sourceTree = "<group>"; };
 		D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorViewController.swift; sourceTree = "<group>"; };
 		D1E138F422F1122B00116AD0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		D1E138F622F117B500116AD0 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
@@ -43,7 +47,7 @@
 		D1E138FC22F1449D00116AD0 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 		D1E138FE22F144EA00116AD0 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
 		D1E1390222F1497400116AD0 /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
-		D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsTableViewController.swift; sourceTree = "<group>"; };
+		D1E1390822F1569E00116AD0 /* RestaurantFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				D18783E522EF80B5008C4180 /* QRScannerViewController.swift */,
-				D1E138EE22F0DF0C00116AD0 /* FormViewController.swift */,
+				D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */,
+				D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */,
 			);
 			path = UserViewControllers;
 			sourceTree = "<group>";
@@ -100,8 +105,8 @@
 			children = (
 				D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */,
 				D1E138F822F1211B00116AD0 /* RestaurantSettingsViewController.swift */,
-				D1E1390822F1569E00116AD0 /* FormsTableViewController.swift */,
-				D187825E22F25A31004FABDC /* FormTableViewCell.swift */,
+				D1E1390822F1569E00116AD0 /* RestaurantFormsTableViewController.swift */,
+				D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */,
 			);
 			path = RestaurantViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				D1E138FA22F126E500116AD0 /* RestaurantController.swift */,
+				D187826022F26BC6004FABDC /* UserController.swift */,
 				D1E138F622F117B500116AD0 /* NetworkController.swift */,
 			);
 			path = "Model Controllers";
@@ -218,12 +224,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1E138EF22F0DF0C00116AD0 /* FormViewController.swift in Sources */,
-				D1E1390922F1569E00116AD0 /* FormsTableViewController.swift in Sources */,
+				D1E138EF22F0DF0C00116AD0 /* UserFormViewController.swift in Sources */,
+				D1E1390922F1569E00116AD0 /* RestaurantFormsTableViewController.swift in Sources */,
+				D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */,
 				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,
-				D187825F22F25A31004FABDC /* FormTableViewCell.swift in Sources */,
+				D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */,
 				D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */,
+				D187826122F26BC6004FABDC /* UserController.swift in Sources */,
 				D1E138F522F1122B00116AD0 /* Restaurant.swift in Sources */,
 				D1E1390322F1497400116AD0 /* Form.swift in Sources */,
 				D18783E422EF80B5008C4180 /* AppDelegate.swift in Sources */,

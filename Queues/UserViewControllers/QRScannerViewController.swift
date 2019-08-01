@@ -62,8 +62,8 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowForm" {
-            let destinationVC = segue.destination as? FormViewController
-            destinationVC?.formID = formID
+            let destinationVC = segue.destination as? UserFormViewController
+            destinationVC?.restaurantID = formID
         }
     }
 

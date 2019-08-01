@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -67,9 +67,9 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
 
     func updateViews() {
-        guard let formID = formID else { return }
+        guard let restaurantID = restaurantID else { return }
 
-        networkController.getRestaurantInfo(for: formID) { (restaurant, error) in
+        networkController.getRestaurantInfo(for: restaurantID) { (restaurant, error) in
             if let error = error {
                 NSLog("error getting info: \(error)")
                 return
@@ -98,6 +98,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             let celebration = userCelebrationTextField.text,
             let partySizeString = userPartySizeTextField.text,
             var partySize = Int(partySizeString),
+            let restaurantID = restaurantID,
             let restaurant = currentRestaurant else { return }
 
         if partySizeString == "" {
@@ -107,16 +108,18 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let pickerSelection = userSeatingPicker.selectedRow(inComponent: 0)
         let seating = seatingOptions[pickerSelection]
 
-        let form = Form(name: name, phone: phone, partySize: partySize, celebration: celebration, seating: seating)
+        let form = Form(name: name, phone: phone, partySize: partySize, celebration: celebration, seating: seating, restaurantID: restaurantID)
 
         networkController.fillForm(restaurantID: restaurant.id, form: form) { (error) in
             if let error = error {
                 NSLog("Error filling form: \(error)")
             }
+            self.navigationController?.popToRootViewController(animated: true)
         }
 
     }
-    
+
+
 
     
 
@@ -131,7 +134,7 @@ class FormViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var userPartySizeTextField: UITextField!
     @IBOutlet weak var userSeatingPicker: UIPickerView!
 
-    var formID: String?
+    var restaurantID: String?
     let networkController = NetworkController()
     var currentRestaurant: Restaurant?
     var seatingOptions: [String] = []

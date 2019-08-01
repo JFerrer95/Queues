@@ -15,15 +15,17 @@ class Form: Codable {
     let timestamp: Double
     let celebration: String?
     let seating: String?
+    let restaurantID: String?
     let id: String
 
-    init(name: String, phone: String, partySize: Int, timestamp: Double = Date().timeIntervalSince1970, celebration: String, seating: String, id: String = UUID().uuidString) {
+    init(name: String, phone: String, partySize: Int, timestamp: Double = Date().timeIntervalSince1970, celebration: String, seating: String, restaurantID: String, id: String = UUID().uuidString) {
         self.name = name
         self.phone = phone
         self.partySize = partySize
         self.timestamp = timestamp
         self.celebration = celebration
         self.seating = seating
+        self.restaurantID = restaurantID
         self.id = id
     }
 }

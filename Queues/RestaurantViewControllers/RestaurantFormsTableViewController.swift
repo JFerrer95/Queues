@@ -1,5 +1,5 @@
 //
-//  FormsTableViewController.swift
+//  RestaurantFormsTableViewController.swift
 //  Queues
 //
 //  Created by Jonathan Ferrer on 7/31/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormsTableViewController: UITableViewController {
+class RestaurantFormsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,7 @@ class FormsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell", for: indexPath) as! FormTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomerCell", for: indexPath) as! RestaurantFormTableViewCell
         let form = RestaurantController.shared.forms[indexPath.row]
 
         cell.namelabel.text = form.name

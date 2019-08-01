@@ -205,16 +205,16 @@
             </objects>
             <point key="canvasLocation" x="-3094" y="386"/>
         </scene>
-        <!--Forms Table View Controller-->
+        <!--Restaurant Forms Table View Controller-->
         <scene sceneID="eau-L1-quQ">
             <objects>
-                <tableViewController id="9rH-YG-WlT" customClass="FormsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="9rH-YG-WlT" customClass="RestaurantFormsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FKC-ER-YzL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomerCell" rowHeight="68" id="5aL-Ii-CYi" customClass="FormTableViewCell" customModule="Queues" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomerCell" rowHeight="68" id="5aL-Ii-CYi" customClass="RestaurantFormTableViewCell" customModule="Queues" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5aL-Ii-CYi" id="ufd-o8-Evb">

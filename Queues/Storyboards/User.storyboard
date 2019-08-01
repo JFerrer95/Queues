@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-510" y="-502"/>
         </scene>
-        <!--Title-->
+        <!--Reserve-->
         <scene sceneID="uWB-5p-dDk">
             <objects>
-                <viewController storyboardIdentifier="Form" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8dv-O3-pqk" customClass="FormViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Form" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8dv-O3-pqk" customClass="UserFormViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ut-IW-e7N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="frF-Dg-LII"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="aUN-P9-cht">
+                    <navigationItem key="navigationItem" title="Reserve" id="aUN-P9-cht">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="zAO-Tc-6W4">
                             <connections>
                                 <action selector="submitButtonPressed:" destination="8dv-O3-pqk" id="Vsk-y1-1zD"/>
@@ -162,7 +162,7 @@
         <!--All Queues-->
         <scene sceneID="aDu-2d-Sz5">
             <objects>
-                <tableViewController id="ktb-pt-MD8" sceneMemberID="viewController">
+                <tableViewController id="ktb-pt-MD8" customClass="UserFormsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9PV-fi-RzF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
