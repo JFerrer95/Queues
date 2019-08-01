@@ -46,7 +46,6 @@ class RestaurantFormsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return RestaurantController.shared.forms.count
     }
 
@@ -69,6 +68,53 @@ class RestaurantFormsTableViewController: UITableViewController {
 
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+    
+        let form = RestaurantController.shared.forms[indexPath.row]
+
+        let tableReadyAction = UITableViewRowAction(style: .normal, title: "Table Ready" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
+
+            let confirmReadyMenu = UIAlertController(title: "Table for \(form.name)", message: "Confirm the table is ready", preferredStyle: .alert)
+
+
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: { (nil) in
+
+                form.isReady = true
+
+                self.networkController.fillForm(restaurantID: form.restaurantID, form: form, completion: { (error) in
+                    if let error = error {
+                        NSLog("Error confirming table is ready \(error)")
+                    }
+                })
+            })
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            confirmReadyMenu.addAction(confirmAction)
+            confirmReadyMenu.addAction(cancelAction)
+
+            self.present(confirmReadyMenu, animated: true, completion: nil)
+        })
+
+        let rateAction = UITableViewRowAction(style: .default, title: "Rate" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+
+            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .actionSheet)
+
+            let appRateAction = UIAlertAction(title: "Rate", style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+            rateMenu.addAction(appRateAction)
+            rateMenu.addAction(cancelAction)
+
+            self.present(rateMenu, animated: true, completion: nil)
+        })
+
+        return [tableReadyAction,rateAction]
+    }
+
+
     let networkController = NetworkController()
 
     
