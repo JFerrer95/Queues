@@ -241,47 +241,66 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Freddy's Bar and Grill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Pv-9tV">
-                                    <rect key="frame" x="129" y="28" width="229" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Ci-UMf">
-                                    <rect key="frame" x="56" y="94" width="139" height="20.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Ci-UMf">
+                                    <rect key="frame" x="20" y="103" width="374" height="20.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Party of 14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNJ-PV-Pj3">
-                                            <rect key="frame" x="0.0" y="0.0" width="83" height="20.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uf7-0V-QmG">
-                                            <rect key="frame" x="91" y="0.0" width="48" height="20.5"/>
+                                            <rect key="frame" x="326" y="0.0" width="48" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(718) 768-0131" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-53-CgM">
-                                    <rect key="frame" x="185" y="66" width="117.5" height="20.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jul 31, 12:40 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOa-b8-bmF">
-                                    <rect key="frame" x="56" y="122" width="93" height="14.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-74-ifj">
+                                    <rect key="frame" x="20" y="8" width="374" height="87"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Reservation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-hx-VI2">
+                                            <rect key="frame" x="111" y="0.0" width="152.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freddy's Bar and Grill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Pv-9tV">
+                                            <rect key="frame" x="72.5" y="28.5" width="229" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(718) 768-0131" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IT0-53-CgM">
+                                            <rect key="frame" x="128.5" y="66.5" width="117.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jul 31, 12:40 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOa-b8-bmF">
+                                    <rect key="frame" x="20" y="142" width="374" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ueX-74-ifj" firstAttribute="top" secondItem="eqr-Qe-hJp" secondAttribute="top" constant="8" id="0Ov-xk-QVT"/>
+                                <constraint firstItem="EOa-b8-bmF" firstAttribute="top" secondItem="tNJ-PV-Pj3" secondAttribute="bottom" constant="18.5" id="LgS-5p-Hxc"/>
+                                <constraint firstItem="EOa-b8-bmF" firstAttribute="leading" secondItem="eqr-Qe-hJp" secondAttribute="leading" constant="20" id="SNl-gh-fOW"/>
+                                <constraint firstItem="pzH-Ci-UMf" firstAttribute="leading" secondItem="eqr-Qe-hJp" secondAttribute="leading" constant="20" id="YM2-fd-QCq"/>
+                                <constraint firstAttribute="bottom" secondItem="EOa-b8-bmF" secondAttribute="bottom" constant="8.5" id="cyL-rt-zwb"/>
+                                <constraint firstItem="ueX-74-ifj" firstAttribute="leading" secondItem="eqr-Qe-hJp" secondAttribute="leading" constant="20" id="eLX-nq-yO9"/>
+                                <constraint firstItem="pzH-Ci-UMf" firstAttribute="top" secondItem="ueX-74-ifj" secondAttribute="bottom" constant="8" id="hcX-TG-40l"/>
+                                <constraint firstAttribute="trailing" secondItem="ueX-74-ifj" secondAttribute="trailing" constant="20" id="kCE-B0-bhX"/>
+                                <constraint firstAttribute="trailing" secondItem="EOa-b8-bmF" secondAttribute="trailing" constant="20" id="rch-up-Hm8"/>
+                                <constraint firstAttribute="trailing" secondItem="pzH-Ci-UMf" secondAttribute="trailing" constant="20" id="xMA-u9-fFY"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" textLabel="7fv-dp-wui" detailTextLabel="5xZ-vW-GPG" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="d0r-JK-vx1" customClass="RestaurantCell" customModule="Queues" customModuleProvider="target">

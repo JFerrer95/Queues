@@ -12,7 +12,7 @@ class UserFormsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        networkTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateCurrentForm), userInfo: nil, repeats: true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -22,11 +22,6 @@ class UserFormsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -49,7 +44,7 @@ class UserFormsTableViewController: UITableViewController {
         return cell
     }
  
-    func updateCurrentForm() {
+    @objc func updateCurrentForm() {
         guard let restaurantID = UserController.shared.currentForm?.restaurantID,
             let formID = UserController.shared.currentForm?.id else { return }
         networkController.getForm(restaurantID: restaurantID, formID: formID) { (form, error) in
@@ -93,6 +88,7 @@ class UserFormsTableViewController: UITableViewController {
     @IBOutlet weak var partySizeLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     var networkController = NetworkController()
+    var networkTimer: Timer?
 
 
 
