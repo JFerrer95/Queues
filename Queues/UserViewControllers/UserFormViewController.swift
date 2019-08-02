@@ -83,9 +83,15 @@ class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 self.restaurantAddressLabel.text = currentRestaurant.address
                 self.restaurantTimesLabel.text = currentRestaurant.times
                 self.updateUserOptions()
-
             }
         }
+
+        guard let user = UserController.shared.user else { return }
+
+        userNameTextField.text = user.name
+        userPhoneTextField.text = user.phone
+
+
     }
 
 

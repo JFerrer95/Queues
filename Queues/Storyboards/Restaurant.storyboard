@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Restaurant Information-->
         <scene sceneID="eat-ty-ZEq">
             <objects>
                 <viewController id="oNP-UT-dz6" customClass="RestaurantSettingsViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                         <viewLayoutGuide key="safeArea" id="5FQ-es-gWS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" id="dsu-RX-J8O"/>
-                    <navigationItem key="navigationItem" title="Title" id="ZBv-eE-8da">
+                    <navigationItem key="navigationItem" title="Restaurant Information" id="ZBv-eE-8da">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Ii-u1-sq9">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="oNP-UT-dz6" id="40w-0k-iXw"/>
@@ -145,12 +145,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTL-Sj-W7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="1175"/>
+            <point key="canvasLocation" x="877" y="1175"/>
         </scene>
         <!--Generator View Controller-->
         <scene sceneID="kBA-eP-XIy">
             <objects>
-                <viewController id="FGO-xH-ahO" customClass="QRGeneratorViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRCodeVC" id="FGO-xH-ahO" customClass="QRGeneratorViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WfN-wk-V89">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,7 +174,7 @@
                     <navigationItem key="navigationItem" id="8QW-et-oTc">
                         <barButtonItem key="rightBarButtonItem" title="Restaurant Settings" id="d7E-qC-A8Q">
                             <connections>
-                                <segue destination="oNP-UT-dz6" kind="show" identifier="ShowEditRestaurant" id="Z6k-NT-9iQ"/>
+                                <segue destination="Wce-nM-Gjr" kind="presentation" id="lk9-LI-wyA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -186,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="-1410" y="1175"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Restaurant Tab Bar Controller-->
         <scene sceneID="wkl-9p-RuS">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gVk-cU-pgt" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RestaurantVC" automaticallyAdjustsScrollViewInsets="NO" id="gVk-cU-pgt" customClass="RestaurantTabBarController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ewk-Kl-a9F">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -324,6 +324,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xri-Gf-wRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2217" y="386"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="TYP-QD-ueJ">
+            <objects>
+                <navigationController id="Wce-nM-Gjr" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="751-eS-HBD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
+                            <real key="value" value="200"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="0xv-dv-Ttb" kind="relationship" relationship="rootViewController" id="ASD-rf-ar4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vG2-33-GCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-632" y="1175"/>
+        </scene>
+        <!--User-->
+        <scene sceneID="zoD-SC-I3b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" id="NnK-KC-qr9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaa-fu-G48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="640"/>
+        </scene>
+        <!--Restaurant Settings Table View Controller-->
+        <scene sceneID="6U1-lq-AAO">
+            <objects>
+                <tableViewController id="0xv-dv-Ttb" customClass="RestaurantSettingsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Itt-ET-OOP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantSettingsCell" textLabel="0Cg-8F-pJe" rowHeight="61" style="IBUITableViewCellStyleDefault" id="qyO-dx-NMM">
+                                <rect key="frame" x="0.0" y="28" width="414" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qyO-dx-NMM" id="1iC-lR-sjn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="0Cg-8F-pJe">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0xv-dv-Ttb" id="Wb9-oq-tu5"/>
+                            <outlet property="delegate" destination="0xv-dv-Ttb" id="XPD-ZF-yVN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Lb9-oC-wD8"/>
+                    <connections>
+                        <segue destination="oNP-UT-dz6" kind="show" identifier="ShowRestaurantInfo" id="EHC-Jr-yC4"/>
+                        <segue destination="NnK-KC-qr9" kind="showDetail" identifier="ShowUser" id="VFa-y1-ISD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDA-jp-DKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="1175"/>
         </scene>
     </scenes>
 </document>

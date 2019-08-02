@@ -1,14 +1,14 @@
 //
-//  UserSettingsTableViewController.swift
+//  RestaurantSettingsTableViewController.swift
 //  Queues
 //
-//  Created by Jonathan Ferrer on 8/1/19.
+//  Created by Jonathan Ferrer on 8/2/19.
 //  Copyright © 2019 Jonathan Ferrer. All rights reserved.
 //
 
 import UIKit
 
-class UserSettingsTableViewController: UITableViewController {
+class RestaurantSettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,12 @@ class UserSettingsTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserSettingsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantSettingsCell", for: indexPath)
 
         let setting = settings[indexPath.row]
 
         cell.textLabel?.text = setting
+
 
         return cell
     }
@@ -39,34 +40,31 @@ class UserSettingsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch (indexPath.row) {
+        switch (indexPath.row){
         case 0:
-            performSegue(withIdentifier: "ShowUserSettings", sender: nil)
+            performSegue(withIdentifier: "ShowRestaurantInfo", sender: nil)
         case 2:
-
-            guard let restaurantVC = UIStoryboard(name: "Restaurant", bundle: nil).instantiateViewController(withIdentifier: "RestaurantVC") as? RestaurantTabBarController else {
-                    print("restaurantVC was not found!")
-                    return
-                }
-            self.dismiss(animated: true) { () -> Void in
-                //Perform segue or push some view with your code
-                UIApplication.shared.keyWindow?.rootViewController = restaurantVC
+            navigationController?.popToRootViewController(animated: true)
+            guard let userVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "UserVC") as? UserNavigationController else {
+                print("UserVC was not found!")
+                return
             }
 
-                
-                
-                view.window?.rootViewController = restaurantVC
-                view.window?.makeKeyAndVisible()
+            self.dismiss(animated: true) { () -> Void in
+                //Perform segue or push some view with your code
+                UIApplication.shared.keyWindow?.rootViewController = userVC
+            }
+
+            view.window?.rootViewController = userVC
+            view.window?.makeKeyAndVisible()
 //        case 2:
-//            performSegue(withIdentifier: "ShowRestaurant", sender: nil)
+//            performSegue(withIdentifier: "ShowUser", sender: nil)
         default:
             print("nothing")
         }
 
     }
 
-
-
-    let settings: [String] = [ "User Info", "Theme Settings", "Switch to Restaurant Mode"]
+    let settings: [String] = ["Restaurant Info", "Theme Settings", "Switch to User Mode"]
 
 }
