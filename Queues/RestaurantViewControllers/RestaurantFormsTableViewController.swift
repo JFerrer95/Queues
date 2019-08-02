@@ -27,7 +27,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
     }
 
     @objc func updateForms() {
-        guard let restaurantID = RestaurantController.shared.restaurantID else { return }
+        guard let restaurantID = RestaurantController.shared.currentRestaurant?.id else { return }
 
         networkController.getForms(restaurantID: restaurantID) { (forms, error) in
             if let error = error {

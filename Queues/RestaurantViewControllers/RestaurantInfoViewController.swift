@@ -25,13 +25,13 @@ class RestaurantInfoViewController: UIViewController, UITextFieldDelegate {
 
         timesTextField.delegate = self
         timesTextField.returnKeyType = .done
+        updateViews()
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         timesTextField.resignFirstResponder()
         return true
     }
-
     @IBAction func saveButtonPressed(_ sender: Any) {
         guard let name = self.nameTextField.text,
             !name.isEmpty,
@@ -94,7 +94,7 @@ class RestaurantInfoViewController: UIViewController, UITextFieldDelegate {
 
 
     func updateViews() {
-        if RestaurantController.shared.currentRestaurant != nil {
+
             let currentRestaurnt = RestaurantController.shared.currentRestaurant
             guard let isCelebrationEnabled = currentRestaurnt?.isCelebrationEnabled,
                 let isIndoorEnabled = currentRestaurnt?.isIndoorEnabled,
@@ -109,7 +109,7 @@ class RestaurantInfoViewController: UIViewController, UITextFieldDelegate {
             isIndoor.isOn = isIndoorEnabled
             isOutdoor.isOn = isOutdoorEnabled
             isBar.isOn = isBarEnabled
-        }
+        
 
     }
 

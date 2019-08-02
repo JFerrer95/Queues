@@ -17,6 +17,8 @@ class UserInfoViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
         self.navigationController?.navigationBar.backItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
+
+        updateViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -26,6 +28,8 @@ class UserInfoViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
         self.navigationController?.navigationBar.backItem?.title = ""
         self.navigationController?.navigationBar.tintColor = .black
+
+        updateViews()
     }
 
 
@@ -42,6 +46,13 @@ class UserInfoViewController: UIViewController {
         let user = User(name: name, phone: phone, email: email)
         UserController.shared.user = user
         navigationController?.popViewController(animated: true)
+    }
+
+    func updateViews() {
+        guard let user = UserController.shared.user else { return }
+        nameLabel.text = user.name
+        phoneLabel.text = user.phone
+        emailLabel.text = user.email
     }
 
     @IBOutlet weak var nameLabel: UITextField!

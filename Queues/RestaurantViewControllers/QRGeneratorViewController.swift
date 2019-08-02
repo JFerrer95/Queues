@@ -26,8 +26,9 @@ class QRGeneratorViewController: UIViewController {
     }
 
     func generateQRCode() {
-        if RestaurantController.shared.restaurantID != nil {
-            let data = RestaurantController.shared.restaurantID?.data(using: .ascii, allowLossyConversion: false)
+
+        guard let restaurant = RestaurantController.shared.currentRestaurant else { return }
+            let data = restaurant.id.data(using: .ascii, allowLossyConversion: false)
             let filter = CIFilter(name: "CIQRCodeGenerator")
             filter?.setValue(data, forKey: "inputMessage")
 
@@ -37,7 +38,7 @@ class QRGeneratorViewController: UIViewController {
             let img = UIImage(ciImage: scaledQrImage!)
 
             myImageView.image = img
-        }
+        
     }
 
     func updateViews() {

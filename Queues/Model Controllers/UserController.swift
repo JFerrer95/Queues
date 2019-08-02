@@ -118,9 +118,9 @@ class UserController {
 
     var user: User?{
         didSet {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(true, forKey: "user")
-        saveUserToPersitentStore()
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(true, forKey: "user")
+            saveUserToPersitentStore()
     }
     }
 }
