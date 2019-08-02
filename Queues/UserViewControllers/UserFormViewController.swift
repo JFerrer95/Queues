@@ -37,8 +37,7 @@ class UserFormViewController: UIViewController, UIPickerViewDataSource, UIPicker
 
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         userNameTextField.resignFirstResponder()
         userPartySizeTextField.resignFirstResponder()
         return true

@@ -19,6 +19,13 @@ class QRGeneratorViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        updateViews()
+        generateQRCode()
+
+    }
+
+    func generateQRCode() {
         if RestaurantController.shared.restaurantID != nil {
             let data = RestaurantController.shared.restaurantID?.data(using: .ascii, allowLossyConversion: false)
             let filter = CIFilter(name: "CIQRCodeGenerator")
@@ -30,11 +37,28 @@ class QRGeneratorViewController: UIViewController {
             let img = UIImage(ciImage: scaledQrImage!)
 
             myImageView.image = img
+        }
+    }
 
+    func updateViews() {
+        if RestaurantController.shared.currentRestaurant != nil {
+            guard let restaurent = RestaurantController.shared.currentRestaurant else { return }
+            restaurantNameLabel.text = restaurent.name
+            restaurantAddressLabel.text = restaurent.address
+            restaurantPhoneLabel.text = restaurent.phone
+        } else {
+            restaurantNameLabel.text = ""
+            restaurantAddressLabel.text = ""
+            restaurantPhoneLabel.text = ""
         }
     }
 
 
 
+
+
+    @IBOutlet weak var restaurantPhoneLabel: UILabel!
+    @IBOutlet weak var restaurantAddressLabel: UILabel!
+    @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
 }

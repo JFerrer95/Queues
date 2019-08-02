@@ -14,7 +14,7 @@
         <!--Restaurant Information-->
         <scene sceneID="eat-ty-ZEq">
             <objects>
-                <viewController id="oNP-UT-dz6" customClass="RestaurantSettingsViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oNP-UT-dz6" customClass="RestaurantInfoViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IVC-YV-X6e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,25 +22,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Z8w-X1-PWB">
                                 <rect key="frame" x="20" y="108" width="374" height="147"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Freddy's Bar and Grill" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVK-wF-c4m">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bVK-wF-c4m">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(718) 768-0131" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-ce-Jth">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9M-ce-Jth">
                                         <rect key="frame" x="0.0" y="39" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" smartDashesType="yes" textContentType="tel"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="627 5th Ave, Brooklyn, NY 11215" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92T-UZ-pUn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="92T-UZ-pUn">
                                         <rect key="frame" x="0.0" y="78" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="street-address"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12PM-4AM" borderStyle="roundedRect" placeholder="times" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCD-KZ-tsD">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="times" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCD-KZ-tsD">
                                         <rect key="frame" x="0.0" y="117" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -52,22 +52,8 @@
                                 <rect key="frame" x="107" y="436" width="201" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-nL-kWn">
-                                        <rect key="frame" x="0.0" y="0.0" width="201" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celebrations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyY-sb-eEI">
-                                                <rect key="frame" x="0.0" y="0.0" width="126" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-5w-k3X">
-                                                <rect key="frame" x="152" y="0.0" width="51" height="31"/>
-                                            </switch>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="vDA-1o-x44">
-                                        <rect key="frame" x="0.0" y="45" width="201" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indoor Seating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vd-45-gVQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="126" height="31"/>
@@ -81,7 +67,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="W0G-W3-tWF">
-                                        <rect key="frame" x="0.0" y="90" width="201" height="31"/>
+                                        <rect key="frame" x="0.0" y="45" width="201" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor Seating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6T-JN-9vg">
                                                 <rect key="frame" x="0.0" y="0.0" width="126" height="31"/>
@@ -95,7 +81,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="26Z-QM-URs">
-                                        <rect key="frame" x="0.0" y="135" width="201" height="31"/>
+                                        <rect key="frame" x="0.0" y="90" width="201" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Seating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlM-B7-gb5">
                                                 <rect key="frame" x="0.0" y="0.0" width="126" height="31"/>
@@ -104,6 +90,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QIk-ir-c0f">
+                                                <rect key="frame" x="152" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="fc1-nL-kWn">
+                                        <rect key="frame" x="0.0" y="135" width="201" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Celebrations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyY-sb-eEI">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gz1-5w-k3X">
                                                 <rect key="frame" x="152" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -126,7 +126,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" id="dsu-RX-J8O"/>
                     <navigationItem key="navigationItem" title="Restaurant Information" id="ZBv-eE-8da">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="1Ii-u1-sq9">
+                        <barButtonItem key="rightBarButtonItem" image="Save" id="1Ii-u1-sq9">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="oNP-UT-dz6" id="40w-0k-iXw"/>
                             </connections>
@@ -163,16 +164,43 @@
                                     <constraint firstAttribute="width" secondItem="Ks0-4l-oGF" secondAttribute="height" multiplier="1:1" id="sn3-LW-UYa"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zwR-VE-q5U">
+                                <rect key="frame" x="20" y="150.5" width="374" height="87"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freddy's Bar and Grill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyE-NF-ZLq">
+                                        <rect key="frame" x="72.5" y="0.0" width="229" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="627 5th Ave, Brooklyn, NY 11215" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83M-FG-Ghd">
+                                        <rect key="frame" x="63.5" y="38" width="247" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7189094425" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcx-4s-Nlb">
+                                        <rect key="frame" x="137" y="66.5" width="100" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="UA6-Ps-iry" firstAttribute="trailing" secondItem="zwR-VE-q5U" secondAttribute="trailing" constant="20" id="EhS-Is-bBP"/>
                             <constraint firstItem="Ks0-4l-oGF" firstAttribute="centerX" secondItem="UA6-Ps-iry" secondAttribute="centerX" id="Z5a-zv-RnU"/>
+                            <constraint firstItem="Ks0-4l-oGF" firstAttribute="top" secondItem="zwR-VE-q5U" secondAttribute="bottom" constant="93" id="bry-ap-2dF"/>
                             <constraint firstItem="Ks0-4l-oGF" firstAttribute="centerY" secondItem="UA6-Ps-iry" secondAttribute="centerY" id="dQV-zf-02X"/>
+                            <constraint firstItem="zwR-VE-q5U" firstAttribute="leading" secondItem="UA6-Ps-iry" secondAttribute="leading" constant="20" id="q6Y-gL-u6E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UA6-Ps-iry"/>
                     </view>
                     <navigationItem key="navigationItem" id="8QW-et-oTc">
-                        <barButtonItem key="rightBarButtonItem" title="Restaurant Settings" id="d7E-qC-A8Q">
+                        <barButtonItem key="rightBarButtonItem" image="Menu" id="d7E-qC-A8Q">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Wce-nM-Gjr" kind="presentation" id="lk9-LI-wyA"/>
                             </connections>
@@ -180,6 +208,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="myImageView" destination="Ks0-4l-oGF" id="Erv-7e-vTl"/>
+                        <outlet property="restaurantAddressLabel" destination="83M-FG-Ghd" id="fgx-Wb-cpc"/>
+                        <outlet property="restaurantNameLabel" destination="PyE-NF-ZLq" id="dL2-wD-KN1"/>
+                        <outlet property="restaurantPhoneLabel" destination="xcx-4s-Nlb" id="MgB-IH-Wsx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-t9-Z22" sceneMemberID="firstResponder"/>
@@ -195,6 +226,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="TG8-Rp-eze" kind="relationship" relationship="viewControllers" id="M9T-ak-PeZ"/>
@@ -287,11 +320,13 @@
             </objects>
             <point key="canvasLocation" x="-1312" y="386"/>
         </scene>
-        <!--qrCode-->
+        <!--Navigation Controller-->
         <scene sceneID="h61-rT-V8X">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TG8-Rp-eze" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="qrCode" id="Tmp-Kz-1mC"/>
+                    <tabBarItem key="tabBarItem" title="" image="QR" selectedImage="QR" id="Tmp-Kz-1mC">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GKO-2Q-6Hp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -306,11 +341,11 @@
             </objects>
             <point key="canvasLocation" x="-2297" y="1175"/>
         </scene>
-        <!--Customers-->
+        <!--Navigation Controller-->
         <scene sceneID="PjX-Av-XhW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PlI-p1-ZaK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Customers" id="Cke-eN-z56"/>
+                    <tabBarItem key="tabBarItem" title="" image="Customers" id="Cke-eN-z56"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nve-OR-DVQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -398,4 +433,10 @@
             <point key="canvasLocation" x="126" y="1175"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Customers" width="30" height="30"/>
+        <image name="Menu" width="30" height="30"/>
+        <image name="QR" width="30" height="30"/>
+        <image name="Save" width="30" height="30"/>
+    </resources>
 </document>

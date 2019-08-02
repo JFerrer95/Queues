@@ -1,5 +1,5 @@
 //
-//  RestaurantSettingsViewController.swift
+//  RestaurantInfoViewController.swift
 //  Queues
 //
 //  Created by Jonathan Ferrer on 7/30/19.
@@ -8,12 +8,22 @@
 
 import UIKit
 
-class RestaurantSettingsViewController: UIViewController {
+class RestaurantInfoViewController: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         updateViews()
+    }
+
+    override func viewDidLoad() {
+        timesTextField.delegate = self
+        timesTextField.returnKeyType = .done
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        timesTextField.resignFirstResponder()
+        return true
     }
 
     @IBAction func saveButtonPressed(_ sender: Any) {

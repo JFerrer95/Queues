@@ -89,13 +89,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="93i-XC-lM5">
                                 <rect key="frame" x="20" y="230" width="374" height="144"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jonathan Ferrer" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mea-4x-D6g">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mea-4x-D6g">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="(347) 749-2243" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgI-Sb-y8w">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pgI-Sb-y8w">
                                         <rect key="frame" x="0.0" y="38" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -107,7 +107,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="4" borderStyle="roundedRect" placeholder="Party Size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yWv-f4-gdE">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Party Size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yWv-f4-gdE">
                                         <rect key="frame" x="0.0" y="114" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -138,7 +138,8 @@
                         <viewLayoutGuide key="safeArea" id="frF-Dg-LII"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reserve" id="aUN-P9-cht">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="zAO-Tc-6W4">
+                        <barButtonItem key="rightBarButtonItem" image="Save" id="zAO-Tc-6W4">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="submitButtonPressed:" destination="8dv-O3-pqk" id="Vsk-y1-1zD"/>
                             </connections>
@@ -191,14 +192,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSettingsCell" textLabel="TiK-FY-56n" rowHeight="61" style="IBUITableViewCellStyleDefault" id="1a6-gV-g8j">
-                                <rect key="frame" x="0.0" y="28" width="414" height="61"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserLogoCell" rowHeight="118" id="1a6-gV-g8j">
+                                <rect key="frame" x="0.0" y="28" width="414" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1a6-gV-g8j" id="ycZ-O8-dmo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="117.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-AS-9ea">
+                                            <rect key="frame" x="105" y="18" width="205" height="81.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="fQ6-AS-9ea" secondAttribute="trailing" constant="104" id="1hF-ri-i3l"/>
+                                        <constraint firstItem="fQ6-AS-9ea" firstAttribute="leading" secondItem="ycZ-O8-dmo" secondAttribute="leading" constant="105" id="8ZB-m3-yHU"/>
+                                        <constraint firstAttribute="bottom" secondItem="fQ6-AS-9ea" secondAttribute="bottom" constant="18" id="9AI-Ci-No6"/>
+                                        <constraint firstItem="fQ6-AS-9ea" firstAttribute="top" secondItem="ycZ-O8-dmo" secondAttribute="top" constant="18" id="eG2-S3-9TH"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserSettingsCell" textLabel="CEq-XM-gzQ" rowHeight="61" style="IBUITableViewCellStyleDefault" id="wy3-NS-1Y1">
+                                <rect key="frame" x="0.0" y="146" width="414" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wy3-NS-1Y1" id="4kh-co-0cu">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="TiK-FY-56n">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" id="CEq-XM-gzQ">
                                             <rect key="frame" x="20" y="0.0" width="374" height="60.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -273,7 +293,8 @@
                         <viewLayoutGuide key="safeArea" id="vpd-nK-jRc"/>
                     </view>
                     <navigationItem key="navigationItem" title="User Information" id="xoo-UG-IQu">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="4o9-JS-ODv">
+                        <barButtonItem key="rightBarButtonItem" image="Save" id="4o9-JS-ODv">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="saveButtonPressed:" destination="dRO-Xf-AzD" id="hYJ-c1-uQz"/>
                             </connections>
@@ -396,12 +417,14 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Queues" id="F6h-NA-KBT"/>
                     <navigationItem key="navigationItem" id="gZr-82-Gif">
-                        <barButtonItem key="leftBarButtonItem" title="User Settings" id="BOJ-i2-haD">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="BOJ-i2-haD">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="4gi-bt-Oxf" kind="presentation" id="uNj-ml-h2f"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Scan Restaurant" id="FMO-9J-51s">
+                        <barButtonItem key="rightBarButtonItem" image="QR" id="FMO-9J-51s">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="So7-2k-wfA" kind="show" id="Zxt-Y3-2Eu"/>
                             </connections>
@@ -440,6 +463,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="200" height="200"/>
+        <image name="Menu" width="30" height="30"/>
+        <image name="QR" width="30" height="30"/>
+        <image name="Save" width="30" height="30"/>
         <image name="Square" width="512" height="512"/>
     </resources>
 </document>

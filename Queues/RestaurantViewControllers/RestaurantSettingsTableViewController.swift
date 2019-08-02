@@ -65,6 +65,6 @@ class RestaurantSettingsTableViewController: UITableViewController {
 
     }
 
-    let settings: [String] = ["Restaurant Info", "Theme Settings", "Switch to User Mode"]
+    let settings: [String] = ["Logo","Restaurant Info", "Theme Settings", "User Mode"]
 
 }

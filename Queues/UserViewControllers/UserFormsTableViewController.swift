@@ -17,6 +17,7 @@ class UserFormsTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        blankLabels()
         updateCurrentForm()
         forms = UserController.shared.forms.sorted { $0.timestamp < $1.timestamp }
         tableView.reloadData()
@@ -100,6 +101,18 @@ class UserFormsTableViewController: UITableViewController {
         }
 
     }
+
+    func blankLabels() {
+        if UserController.shared.currentForm == nil {
+
+            isReadyLabel.text = ""
+            restaurantNameLabel.text = ""
+            restaurantPhoneButton.setTitle("", for: .normal)
+            partySizeLabel.text = ""
+            timestampLabel.text = ""
+        }
+    }
+
 
 
     @IBOutlet weak var isReadyLabel: UILabel!
