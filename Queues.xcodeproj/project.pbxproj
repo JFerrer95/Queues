@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D14B21A622F436AD00CB0B0A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14B21A522F436AD00CB0B0A /* Extensions.swift */; };
 		D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */; };
 		D187826122F26BC6004FABDC /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826022F26BC6004FABDC /* UserController.swift */; };
 		D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		645E9A8443A1E91265D07423 /* Pods-Queues.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queues.release.xcconfig"; path = "Target Support Files/Pods-Queues/Pods-Queues.release.xcconfig"; sourceTree = "<group>"; };
 		8547B78D1926D40B445A259E /* Pods-Queues.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queues.debug.xcconfig"; path = "Target Support Files/Pods-Queues/Pods-Queues.debug.xcconfig"; sourceTree = "<group>"; };
+		D14B21A522F436AD00CB0B0A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D187825E22F25A31004FABDC /* RestaurantFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantFormTableViewCell.swift; sourceTree = "<group>"; };
 		D187826022F26BC6004FABDC /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		D187826222F26DE9004FABDC /* UserFormsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormsTableViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				D18783E322EF80B5008C4180 /* AppDelegate.swift */,
 				D1E138EC22F0D96500116AD0 /* Images.xcassets */,
 				D18783EF22EF80B7008C4180 /* Info.plist */,
+				D14B21A522F436AD00CB0B0A /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				D187825F22F25A31004FABDC /* RestaurantFormTableViewCell.swift in Sources */,
 				D187826722F27EEA004FABDC /* RestaurantCell.swift in Sources */,
 				D1E138F722F117B500116AD0 /* NetworkController.swift in Sources */,
+				D14B21A622F436AD00CB0B0A /* Extensions.swift in Sources */,
 				D19991B622F3F8DA00229D3A /* RestaurantSettingsTableViewController.swift in Sources */,
 				D187826122F26BC6004FABDC /* UserController.swift in Sources */,
 				D1E138F522F1122B00116AD0 /* Restaurant.swift in Sources */,

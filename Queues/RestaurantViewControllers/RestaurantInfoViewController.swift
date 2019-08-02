@@ -8,19 +8,9 @@
 
 import UIKit
 
-extension UINavigationController {
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationBar.backIndicatorImage = UIImage(named: "Back")
-        navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
-        navigationBar.backItem?.title = ""
-        navigationBar.tintColor = .black
-    }
-}
 
-extension UINavigationItem {
 
-}
+
 
 class RestaurantInfoViewController: UIViewController, UITextFieldDelegate {
 
