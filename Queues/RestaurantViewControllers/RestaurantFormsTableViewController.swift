@@ -133,7 +133,8 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        let forms = RestaurantController.shared.forms.filter { $0.isReady == false }
+        let filteredForms = RestaurantController.shared.forms.filter { $0.isReady == false }
+        let forms = filteredForms.sorted { $0.timestamp < $1.timestamp }
         if indexPath.section == 0 {
             let form = forms[indexPath.row]
         let tableReadyAction = UITableViewRowAction(style: .normal, title: "Table Ready" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in

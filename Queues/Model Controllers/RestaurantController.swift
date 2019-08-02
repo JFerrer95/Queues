@@ -88,7 +88,7 @@ class RestaurantController {
             return nil
         }
         print("Documents: \(documents.path)")
-        return documents.appendingPathComponent("RestaurantInFo.plist")
+        return documents.appendingPathComponent("RestaurantInfo.plist")
     }
 
     private var formsURL: URL? {
