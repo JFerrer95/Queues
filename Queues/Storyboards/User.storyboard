@@ -217,7 +217,7 @@
                     <navigationItem key="navigationItem" id="L8A-fU-BBJ"/>
                     <connections>
                         <segue destination="dRO-Xf-AzD" kind="show" identifier="ShowUserSettings" id="yRf-VT-iuh"/>
-                        <segue destination="kfT-P7-OwT" kind="presentation" identifier="ShowRestaurant" id="WdA-Ff-rLj"/>
+                        <segue destination="kfT-P7-OwT" kind="showDetail" identifier="ShowRestaurant" id="WdA-Ff-rLj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEp-2d-gcq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -417,12 +417,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcK-nv-p28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1361" y="-502"/>
+            <point key="canvasLocation" x="-1355" y="-502"/>
         </scene>
         <!--Check-In-->
         <scene sceneID="hHA-pD-6ZP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5qV-O2-CLw" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UserVC" automaticallyAdjustsScrollViewInsets="NO" id="5qV-O2-CLw" customClass="UserNavigationController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Check-In" id="5Jk-Qf-tRD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mIx-yf-o4V">

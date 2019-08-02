@@ -30,6 +30,7 @@ class UserInfoViewController: UIViewController {
             !email.isEmpty else { return }
         let user = User(name: name, phone: phone, email: email)
         UserController.shared.user = user
+        navigationController?.popViewController(animated: true)
     }
 
     @IBOutlet weak var nameLabel: UITextField!
