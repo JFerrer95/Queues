@@ -20,4 +20,6 @@ class UserController {
 
     var forms: [Form] = []
     var currentForm: Form?
+
+    var user: User?
 }

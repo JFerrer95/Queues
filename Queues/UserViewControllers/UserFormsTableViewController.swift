@@ -18,20 +18,22 @@ class UserFormsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateCurrentForm()
+        forms = UserController.shared.forms.sorted { $0.timestamp < $1.timestamp }
         tableView.reloadData()
+
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return UserController.shared.forms.count
+        return forms.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
-        let form = UserController.shared.forms[indexPath.row]
+        let form = forms[indexPath.row]
 
         cell.textLabel?.text = form.restaurantName
         cell.detailTextLabel?.text = form.restaurantPhone
@@ -44,7 +46,7 @@ class UserFormsTableViewController: UITableViewController {
         }
         return CGFloat(100)
     }
-    
+
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
             return "Previous Check-Ins"
@@ -68,12 +70,22 @@ class UserFormsTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func phoneButtonPressed(_ sender: Any) {
+        guard let form = UserController.shared.currentForm else { return }
+        guard let number = URL(string: "tel://" + form.restaurantPhone) else { return }
+        UIApplication.shared.open(number)
+    }
+    
     func updateViews() {
         guard let form = UserController.shared.currentForm,
             let isReady = form.isReady else { return }
 
         restaurantNameLabel.text = form.restaurantName
-        restaurantPhoneLabel.text = form.restaurantPhone
+
+
+        restaurantPhoneButton.setTitle( form.restaurantPhone, for: .normal)
+
+
         partySizeLabel.text = "Party of \(form.partySize)"
         let date = Date(timeIntervalSince1970: form.timestamp)
         let dateFormatter = DateFormatter()
@@ -92,12 +104,12 @@ class UserFormsTableViewController: UITableViewController {
 
     @IBOutlet weak var isReadyLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
-    @IBOutlet weak var restaurantPhoneLabel: UILabel!
+    @IBOutlet weak var restaurantPhoneButton: UIButton!
     @IBOutlet weak var partySizeLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
     var networkController = NetworkController()
     var networkTimer: Timer?
-
+    var forms: [Form] = []
 
 
 

@@ -17,6 +17,7 @@
 		D18783EE22EF80B7008C4180 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18783EC22EF80B7008C4180 /* LaunchScreen.storyboard */; };
 		D19991AA22F38E9700229D3A /* UserSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */; };
 		D19991AC22F39A8700229D3A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19991AB22F39A8700229D3A /* User.swift */; };
+		D19991B422F3F39C00229D3A /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19991B322F3F39C00229D3A /* UserInfoViewController.swift */; };
 		D1E138ED22F0D96500116AD0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E138EC22F0D96500116AD0 /* Images.xcassets */; };
 		D1E138EF22F0DF0C00116AD0 /* UserFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */; };
 		D1E138F122F0F80F00116AD0 /* QRGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */; };
@@ -46,6 +47,7 @@
 		D18783EF22EF80B7008C4180 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewController.swift; sourceTree = "<group>"; };
 		D19991AB22F39A8700229D3A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D19991B322F3F39C00229D3A /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		D1E138EC22F0D96500116AD0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFormViewController.swift; sourceTree = "<group>"; };
 		D1E138F022F0F80F00116AD0 /* QRGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRGeneratorViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				D18783E522EF80B5008C4180 /* QRScannerViewController.swift */,
 				D1E138EE22F0DF0C00116AD0 /* UserFormViewController.swift */,
 				D19991A922F38E9700229D3A /* UserSettingsTableViewController.swift */,
+				D19991B322F3F39C00229D3A /* UserInfoViewController.swift */,
 			);
 			path = UserViewControllers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				D1E1390922F1569E00116AD0 /* RestaurantFormsTableViewController.swift in Sources */,
 				D187826322F26DE9004FABDC /* UserFormsTableViewController.swift in Sources */,
 				D19991AA22F38E9700229D3A /* UserSettingsTableViewController.swift in Sources */,
+				D19991B422F3F39C00229D3A /* UserInfoViewController.swift in Sources */,
 				D19991AC22F39A8700229D3A /* User.swift in Sources */,
 				D18783E622EF80B5008C4180 /* QRScannerViewController.swift in Sources */,
 				D1E138FB22F126E500116AD0 /* RestaurantController.swift in Sources */,

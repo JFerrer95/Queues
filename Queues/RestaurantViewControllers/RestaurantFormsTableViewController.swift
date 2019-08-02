@@ -135,7 +135,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
 
         let forms = RestaurantController.shared.forms.filter { $0.isReady == false }
         if indexPath.section == 0 {
-        let form = forms[indexPath.row]
+            let form = forms[indexPath.row]
         let tableReadyAction = UITableViewRowAction(style: .normal, title: "Table Ready" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
             let confirmReadyMenu = UIAlertController(title: "Table for \(form.name)", message: "Confirm the table is ready", preferredStyle: .alert)
             let confirmAction = UIAlertAction(title: "Confirm", style: .default, handler: { (nil) in
@@ -161,9 +161,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
         })
 
         let contactAction = UITableViewRowAction(style: .default, title: "Contact" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
-
             let contactMenu = UIAlertController(title: nil, message: "Contact  \(form.name)?", preferredStyle: .alert)
-
             let callAction = UIAlertAction(title: "Call", style: .default, handler: { (nil) in
                 
                 guard let number = URL(string: "tel://" + form.phone) else { return }
@@ -179,7 +177,9 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
                     self.present(controller, animated: true, completion: nil)
                 }
             })
+            let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
 
+            contactMenu.addAction(cancelAction)
             contactMenu.addAction(callAction)
             contactMenu.addAction(textAction)
            
@@ -189,7 +189,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
 
         return [tableReadyAction, contactAction]
         } else {
-            return nil
+           return nil
         }
     }
 
