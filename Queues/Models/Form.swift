@@ -8,7 +8,8 @@
 
 import Foundation
 
-class Form: Codable, Equatable {
+class Form: Equatable, Codable {
+
     static func == (lhs: Form, rhs: Form) -> Bool {
         return lhs.isReady == rhs.isReady
     }
