@@ -67,9 +67,33 @@ class UserFormsTableViewController: UITableViewController {
 
             DispatchQueue.main.async {
                 self.updateViews()
+
+                if !form.isReady! {
+                    self.hasBeenAlerted = false
+                }
+
+                if !self.hasBeenAlerted {
+                    self.isReady()
+                }
             }
         }
     }
+
+    func isReady() {
+        guard let form = UserController.shared.currentForm else { return }
+
+        if form.isReady! {
+
+        let tableReadyAlert = UIAlertController(title: "Table for \(form.name)", message: "Your table for \(form.partySize) is ready!", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "Okay", style: .destructive, handler: nil)
+
+        tableReadyAlert.addAction(confirmAction)
+
+        self.present(tableReadyAlert, animated: true, completion: nil)
+        self.hasBeenAlerted = true
+        }
+    }
+
 
     @IBAction func phoneButtonPressed(_ sender: Any) {
         guard let form = UserController.shared.currentForm else { return }
@@ -120,6 +144,7 @@ class UserFormsTableViewController: UITableViewController {
     @IBOutlet weak var restaurantPhoneButton: UIButton!
     @IBOutlet weak var partySizeLabel: UILabel!
     @IBOutlet weak var timestampLabel: UILabel!
+    var hasBeenAlerted = false
     var networkController = NetworkController()
     var networkTimer: Timer?
     var forms: [Form] = []

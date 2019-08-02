@@ -242,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Nx8-AW-5FT">
-                                <rect key="frame" x="20" y="128" width="374" height="140"/>
+                                <rect key="frame" x="20" y="288" width="374" height="140"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdL-fY-UnY">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
@@ -254,13 +254,13 @@
                                         <rect key="frame" x="0.0" y="52" width="374" height="36"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-Rp-JAK">
                                         <rect key="frame" x="0.0" y="104" width="374" height="36"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -269,7 +269,7 @@
                         <constraints>
                             <constraint firstItem="Nx8-AW-5FT" firstAttribute="leading" secondItem="vpd-nK-jRc" secondAttribute="leading" constant="20" id="Zuf-mF-HBg"/>
                             <constraint firstItem="vpd-nK-jRc" firstAttribute="trailing" secondItem="Nx8-AW-5FT" secondAttribute="trailing" constant="20" id="nae-2P-AqP"/>
-                            <constraint firstItem="Nx8-AW-5FT" firstAttribute="top" secondItem="vpd-nK-jRc" secondAttribute="top" constant="40" id="pdQ-XA-Vzf"/>
+                            <constraint firstItem="Nx8-AW-5FT" firstAttribute="top" secondItem="vpd-nK-jRc" secondAttribute="top" constant="200" id="pdQ-XA-Vzf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vpd-nK-jRc"/>
                     </view>

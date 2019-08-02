@@ -13,9 +13,20 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Back")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
+        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Back")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Back")
+        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = .black
+    }
 
 
 
