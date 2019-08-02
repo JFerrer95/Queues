@@ -21,6 +21,7 @@ class UserFormsTableViewController: UITableViewController {
         blankLabels()
         updateCurrentForm()
         forms = UserController.shared.forms.sorted { $0.timestamp < $1.timestamp }
+        self.tableView.separatorStyle = .none
         tableView.reloadData()
 
     }
@@ -97,8 +98,12 @@ class UserFormsTableViewController: UITableViewController {
 
 
     @IBAction func phoneButtonPressed(_ sender: Any) {
-        guard let form = UserController.shared.currentForm else { return }
-        guard let number = URL(string: "tel://" + form.restaurantPhone) else { return }
+        guard let phoneNumber = UserController.shared.currentForm?.restaurantPhone else { return }
+        let numberWithoutOpen = phoneNumber.replacingOccurrences(of: "(", with: "")
+        let numberWithoutClose = numberWithoutOpen.replacingOccurrences(of: ")", with: "")
+        let numberWithoutDash = numberWithoutClose.replacingOccurrences(of: "-", with: "")
+        let numberWithoutSpace = numberWithoutDash.replacingOccurrences(of: " ", with: "")
+        guard let number = URL(string: "tel://" + numberWithoutSpace) else { return }
         UIApplication.shared.open(number)
     }
     
