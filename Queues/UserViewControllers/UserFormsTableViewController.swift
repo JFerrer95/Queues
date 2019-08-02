@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class UserFormsTableViewController: UITableViewController {
 
@@ -86,7 +87,7 @@ class UserFormsTableViewController: UITableViewController {
 
         let tableReadyAlert = UIAlertController(title: "Table for \(form.name)", message: "Your table for \(form.partySize) is ready!", preferredStyle: .alert)
         let confirmAction = UIAlertAction(title: "Okay", style: .destructive, handler: nil)
-
+        AudioServicesPlayAlertSound(UInt32(1020))
         tableReadyAlert.addAction(confirmAction)
 
         self.present(tableReadyAlert, animated: true, completion: nil)
