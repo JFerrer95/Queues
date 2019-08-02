@@ -164,7 +164,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
 
             let contactMenu = UIAlertController(title: nil, message: "Contact  \(form.name)?", preferredStyle: .alert)
 
-            let callAction = UIAlertAction(title: "Call \(form.name)", style: .default, handler: { (nil) in
+            let callAction = UIAlertAction(title: "Call", style: .default, handler: { (nil) in
                 
                 guard let number = URL(string: "tel://" + form.phone) else { return }
                 UIApplication.shared.open(number)

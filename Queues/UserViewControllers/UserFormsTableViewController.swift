@@ -32,16 +32,24 @@ class UserFormsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
         let form = UserController.shared.forms[indexPath.row]
-        guard let isReady = form.isReady else { return cell}
+
         cell.textLabel?.text = form.restaurantName
-        if isReady {
-            cell.detailTextLabel?.text = "Ready"
-            cell.detailTextLabel?.textColor = .green
-        } else {
-            cell.detailTextLabel?.text = "Not Ready"
-            cell.detailTextLabel?.textColor = .red
-        }
+        cell.detailTextLabel?.text = form.restaurantPhone
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return CGFloat(0)
+        }
+        return CGFloat(100)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Previous Check-Ins"
+        }
+        return ""
     }
  
     @objc func updateCurrentForm() {
