@@ -47,10 +47,12 @@ class QRGeneratorViewController: UIViewController {
             restaurantNameLabel.text = restaurent.name
             restaurantAddressLabel.text = restaurent.address
             restaurantPhoneLabel.text = restaurent.phone
+            scanLabel.isHidden = false
         } else {
             restaurantNameLabel.text = ""
             restaurantAddressLabel.text = ""
             restaurantPhoneLabel.text = ""
+            scanLabel.isHidden = true
         }
     }
 
@@ -62,4 +64,5 @@ class QRGeneratorViewController: UIViewController {
     @IBOutlet weak var restaurantAddressLabel: UILabel!
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
+    @IBOutlet weak var scanLabel: UILabel!
 }

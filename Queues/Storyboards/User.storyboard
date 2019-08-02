@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="484" y="-1504"/>
         </scene>
-        <!--All Queues-->
+        <!--Current Reservation-->
         <scene sceneID="aDu-2d-Sz5">
             <objects>
                 <tableViewController id="ktb-pt-MD8" customClass="UserFormsTableViewController" customModule="Queues" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,20 +323,14 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-74-ifj">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Reservation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-hx-VI2">
-                                            <rect key="frame" x="131" y="0.0" width="152.5" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Freddy's Bar and Grill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U74-Pv-9tV">
-                                            <rect key="frame" x="92.5" y="28.5" width="229" height="30"/>
+                                            <rect key="frame" x="92.5" y="0.0" width="229" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idK-sp-F45">
-                                            <rect key="frame" x="154.5" y="66.5" width="105" height="30"/>
+                                            <rect key="frame" x="154.5" y="38" width="105" height="58.5"/>
                                             <state key="normal" title="(718) 768-0131"/>
                                             <connections>
                                                 <action selector="phoneButtonPressed:" destination="ktb-pt-MD8" eventType="touchUpInside" id="iN7-ol-AQ1"/>
@@ -397,7 +391,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="All Queues" id="F6h-NA-KBT"/>
-                    <navigationItem key="navigationItem" id="gZr-82-Gif">
+                    <navigationItem key="navigationItem" title="Current Reservation" id="gZr-82-Gif">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="BOJ-i2-haD">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

@@ -189,14 +189,23 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCAN THIS CODE WITH THE QUEUES APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4Y-aa-5X2">
+                                <rect key="frame" x="20" y="613" width="374" height="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UA6-Ps-iry" firstAttribute="trailing" secondItem="zwR-VE-q5U" secondAttribute="trailing" constant="20" id="EhS-Is-bBP"/>
+                            <constraint firstItem="d4Y-aa-5X2" firstAttribute="leading" secondItem="UA6-Ps-iry" secondAttribute="leading" constant="20" id="IjN-jD-Xar"/>
                             <constraint firstItem="Ks0-4l-oGF" firstAttribute="centerX" secondItem="UA6-Ps-iry" secondAttribute="centerX" id="Z5a-zv-RnU"/>
                             <constraint firstItem="Ks0-4l-oGF" firstAttribute="top" secondItem="zwR-VE-q5U" secondAttribute="bottom" constant="93" id="bry-ap-2dF"/>
                             <constraint firstItem="Ks0-4l-oGF" firstAttribute="centerY" secondItem="UA6-Ps-iry" secondAttribute="centerY" id="dQV-zf-02X"/>
+                            <constraint firstItem="d4Y-aa-5X2" firstAttribute="top" secondItem="Ks0-4l-oGF" secondAttribute="bottom" constant="42.5" id="ffg-4e-VJc"/>
                             <constraint firstItem="zwR-VE-q5U" firstAttribute="leading" secondItem="UA6-Ps-iry" secondAttribute="leading" constant="20" id="q6Y-gL-u6E"/>
+                            <constraint firstItem="UA6-Ps-iry" firstAttribute="trailing" secondItem="d4Y-aa-5X2" secondAttribute="trailing" constant="20" id="r1U-YP-FFW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UA6-Ps-iry"/>
                     </view>
@@ -213,6 +222,7 @@
                         <outlet property="restaurantAddressLabel" destination="83M-FG-Ghd" id="fgx-Wb-cpc"/>
                         <outlet property="restaurantNameLabel" destination="PyE-NF-ZLq" id="dL2-wD-KN1"/>
                         <outlet property="restaurantPhoneLabel" destination="xcx-4s-Nlb" id="MgB-IH-Wsx"/>
+                        <outlet property="scanLabel" destination="d4Y-aa-5X2" id="c85-VY-hqq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rr2-t9-Z22" sceneMemberID="firstResponder"/>

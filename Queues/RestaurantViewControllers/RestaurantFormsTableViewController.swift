@@ -22,7 +22,7 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        self.tableView.separatorStyle = .none
         updateForms()
     }
 
@@ -70,6 +70,13 @@ class RestaurantFormsTableViewController: UITableViewController, MFMessageCompos
             return ""
         }
     }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = .black
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
+
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {

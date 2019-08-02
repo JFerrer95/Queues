@@ -17,7 +17,9 @@ class RestaurantSettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
