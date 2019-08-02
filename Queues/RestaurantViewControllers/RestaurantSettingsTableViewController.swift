@@ -29,6 +29,12 @@ class RestaurantSettingsTableViewController: UITableViewController {
 
         let setting = settings[indexPath.row]
 
+        if indexPath.row == 0 {
+            cell.textLabel?.text = ""
+            cell.imageView?.image = UIImage(named: "Logo")
+            return cell
+        }
+
         cell.textLabel?.text = setting
 
 
@@ -41,9 +47,9 @@ class RestaurantSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.row){
-        case 0:
+        case 1:
             performSegue(withIdentifier: "ShowRestaurantInfo", sender: nil)
-        case 2:
+        case 3:
             navigationController?.popToRootViewController(animated: true)
             guard let userVC = UIStoryboard(name: "User", bundle: nil).instantiateViewController(withIdentifier: "UserVC") as? UserNavigationController else {
                 print("UserVC was not found!")

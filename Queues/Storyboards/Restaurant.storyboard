@@ -199,7 +199,7 @@
                         <viewLayoutGuide key="safeArea" id="UA6-Ps-iry"/>
                     </view>
                     <navigationItem key="navigationItem" id="8QW-et-oTc">
-                        <barButtonItem key="rightBarButtonItem" image="Menu" id="d7E-qC-A8Q">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="d7E-qC-A8Q">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Wce-nM-Gjr" kind="presentation" id="lk9-LI-wyA"/>
@@ -369,7 +369,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="menuWidth">
                             <real key="value" value="200"/>
                         </userDefinedRuntimeAttribute>

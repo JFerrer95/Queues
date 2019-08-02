@@ -26,11 +26,15 @@ class UserSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserSettingsCell", for: indexPath)
-
         let setting = settings[indexPath.row]
 
-        cell.textLabel?.text = setting
+        if indexPath.row == 0 {
+            cell.textLabel?.text = ""
+            cell.imageView?.image = UIImage(named: "Logo")
+            return cell
+        }
 
+        cell.textLabel?.text = setting
         return cell
     }
 
@@ -40,9 +44,9 @@ class UserSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.row) {
-        case 0:
+        case 1:
             performSegue(withIdentifier: "ShowUserSettings", sender: nil)
-        case 2:
+        case 3:
 
             guard let restaurantVC = UIStoryboard(name: "Restaurant", bundle: nil).instantiateViewController(withIdentifier: "RestaurantVC") as? RestaurantTabBarController else {
                     print("restaurantVC was not found!")
@@ -67,6 +71,6 @@ class UserSettingsTableViewController: UITableViewController {
 
 
 
-    let settings: [String] = [ "User Info", "Theme Settings", "Restaurant Mode"]
+    let settings: [String] = ["Logo", "User Info", "Theme Settings", "Restaurant Mode"]
 
 }
