@@ -15,10 +15,10 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        let camera = bestCamera()
 
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
+            let input = try AVCaptureDeviceInput(device: camera)
             session.addInput(input)
         } catch {
             NSLog("Error")
@@ -37,6 +37,22 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         session.startRunning()
 
         view.bringSubviewToFront(square)
+    }
+
+    private func bestCamera() -> AVCaptureDevice {
+        if #available(iOS 10.2, *) {
+            if let device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back) {
+                return device
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+
+        if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) {
+            return device
+        }
+
+        fatalError("No cameras exist - you're probably running on the simulator")
     }
 
     override func viewWillAppear(_ animated: Bool) {

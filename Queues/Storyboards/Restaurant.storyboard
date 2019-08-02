@@ -172,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="UA6-Ps-iry"/>
                     </view>
                     <navigationItem key="navigationItem" id="8QW-et-oTc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d7E-qC-A8Q">
+                        <barButtonItem key="rightBarButtonItem" title="Restaurant Settings" id="d7E-qC-A8Q">
                             <connections>
                                 <segue destination="oNP-UT-dz6" kind="show" identifier="ShowEditRestaurant" id="Z6k-NT-9iQ"/>
                             </connections>
@@ -285,7 +285,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2b-zw-n7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1557.9710144927537" y="385.71428571428572"/>
+            <point key="canvasLocation" x="-1312" y="386"/>
         </scene>
         <!--qrCode-->
         <scene sceneID="h61-rT-V8X">

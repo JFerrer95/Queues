@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import MessageUI
 
-class RestaurantFormsTableViewController: UITableViewController {
+class RestaurantFormsTableViewController: UITableViewController, MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,8 +133,8 @@ class RestaurantFormsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        if indexPath.section == 0 {
         let forms = RestaurantController.shared.forms.filter { $0.isReady == false }
+        if indexPath.section == 0 {
         let form = forms[indexPath.row]
         let tableReadyAction = UITableViewRowAction(style: .normal, title: "Table Ready" , handler: { (action:UITableViewRowAction, indexPath: IndexPath) -> Void in
             let confirmReadyMenu = UIAlertController(title: "Table for \(form.name)", message: "Confirm the table is ready", preferredStyle: .alert)
@@ -155,24 +160,40 @@ class RestaurantFormsTableViewController: UITableViewController {
             self.present(confirmReadyMenu, animated: true, completion: nil)
         })
 
-        let rateAction = UITableViewRowAction(style: .default, title: "Rate" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
+        let contactAction = UITableViewRowAction(style: .default, title: "Contact" , handler: { (action:UITableViewRowAction, indexPath:IndexPath) -> Void in
 
-            let rateMenu = UIAlertController(title: nil, message: "Rate this App", preferredStyle: .actionSheet)
+            let contactMenu = UIAlertController(title: nil, message: "Contact  \(form.name)?", preferredStyle: .alert)
 
-            let appRateAction = UIAlertAction(title: "Rate", style: .default, handler: nil)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            let callAction = UIAlertAction(title: "Call \(form.name)", style: .default, handler: { (nil) in
+                
+                guard let number = URL(string: "tel://" + form.phone) else { return }
+                UIApplication.shared.open(number)
+            })
 
-            rateMenu.addAction(appRateAction)
-            rateMenu.addAction(cancelAction)
+            let textAction = UIAlertAction(title: "Text", style: .default, handler: { (nil) in
+                if (MFMessageComposeViewController.canSendText()) {
+                    let controller = MFMessageComposeViewController()
+                    controller.body = "Hi \(form.name), \nThis is \(form.restaurantName).  Your table for \(form.partySize) is now ready!"
+                    controller.recipients = [form.phone]
+                    controller.messageComposeDelegate = self
+                    self.present(controller, animated: true, completion: nil)
+                }
+            })
 
-            self.present(rateMenu, animated: true, completion: nil)
+            contactMenu.addAction(callAction)
+            contactMenu.addAction(textAction)
+           
+
+            self.present(contactMenu, animated: true, completion: nil)
         })
 
-        return [tableReadyAction,rateAction]
+        return [tableReadyAction, contactAction]
         } else {
             return nil
         }
     }
+
+
 
 
     let networkController = NetworkController()
